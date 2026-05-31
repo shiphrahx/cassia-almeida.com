@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap');
 
 :root {
   --bg: #08070b;
@@ -9,8 +8,8 @@
   --text: #e0dde9;
   --text-secondary: #706d80;
   --text-dim: #48455a;
-  --font-sans: var(--font-outfit, 'Outfit', system-ui, sans-serif);
-  --font-mono: var(--font-jetbrains, 'JetBrains Mono', monospace);
+  --font-sans: var(--font-outfit), 'Outfit', system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), 'JetBrains Mono', monospace;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
