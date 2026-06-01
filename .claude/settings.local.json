@@ -4,7 +4,18 @@
       "Bash(git clone *)",
       "Bash(Get-ChildItem \"c:\\\\Users\\\\Shiph\\\\Documents\\\\Code\\\\cassia-almeida.com\")",
       "Bash(Select-Object Name, LastWriteTime)",
-      "Bash(Format-Table -AutoSize)"
+      "Bash(Format-Table -AutoSize)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "WebFetch(domain:medium.com)",
+      "PowerShell(git add app/writing/page.tsx components/ArticleList.tsx data/)",
+      "PowerShell(git commit -m \"feat: add writing page with Medium articles and infinite scroll\")",
+      "PowerShell(git push)",
+      "PowerShell(Copy-Item \"C:\\\\Users\\\\Shiph\\\\Documents\\\\Code\\\\cassia-almeida.com\\\\content\\\\img\\\\home.png\" \"C:\\\\Users\\\\Shiph\\\\Documents\\\\Code\\\\cassia-almeida.com\\\\public\\\\home.png\")",
+      "PowerShell(Start-Process powershell -ArgumentList \"-NoExit\", \"-Command\", \"cd 'C:\\\\Users\\\\Shiph\\\\Documents\\\\Code\\\\cassia-almeida.com'; npx next dev\" -WindowStyle Normal)",
+      "PowerShell(Start-Sleep -Seconds 5; try { $r = Invoke-WebRequest -Uri \"http://localhost:3000\" -TimeoutSec 10 -UseBasicParsing; \"Status: $\\($r.StatusCode\\)\" } catch { \"Not ready: $_\" })",
+      "PowerShell(npx playwright install chromium 2>&1)",
+      "PowerShell(cd \"C:\\\\Users\\\\Shiph\\\\Documents\\\\Code\\\\cassia-almeida.com\"; npx playwright eval --browser chromium \"const { chromium } = require\\('playwright'\\); \\(async \\(\\) => { const b = await chromium.launch\\(\\); const p = await b.newPage\\(\\); await p.goto\\('http://localhost:3000'\\); const footer = await p.\\\\$eval\\('footer', el => { const r = el.getBoundingClientRect\\(\\); return JSON.stringify\\({top: r.top, bottom: r.bottom, left: r.left, height: r.height, display: getComputedStyle\\(el\\).display}\\); }\\); console.log\\(footer\\); await b.close\\(\\); }\\)\\(\\)\" 2>&1)"
     ]
   }
 }

@@ -49,6 +49,13 @@ a { color: inherit; text-decoration: none; }
   padding: 0 24px;
   position: relative;
   z-index: 3;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container main {
+  flex: 1;
 }
 
 /* ── Nav ── */
@@ -392,6 +399,39 @@ nav {
   white-space: nowrap;
   margin-left: 20px;
 }
+
+/* ── Home hero ── */
+.home-hero {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+.home-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(8,7,11,0.5) 0%, rgba(8,7,11,0.3) 50%, rgba(8,7,11,0.75) 100%);
+  z-index: 1;
+}
+
+.home-hero-content {
+  display: none;
+}
+
+/* homepage: hero exists → style nav/footer over image, no scroll */
+body:has(.home-hero) { overflow: hidden; }
+
+body:has(.home-hero) .page-title { padding-top: 48px; }
+body:has(.home-hero) .page-subtitle { padding-bottom: 0; }
+
+body:has(.home-hero) footer {
+  border-top-color: rgba(255,255,255,0.2);
+}
+
+body:has(.home-hero) .footer-links a { color: rgba(255,255,255,0.7); }
+body:has(.home-hero) .footer-links a:hover { color: #fff; }
+body:has(.home-hero) .footer-copy { color: rgba(255,255,255,0.5); }
+
 
 /* ── Footer ── */
 footer {
