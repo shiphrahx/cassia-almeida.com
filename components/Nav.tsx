@@ -18,7 +18,6 @@ export default function Nav() {
 
   return (
     <nav>
-      <Link href="/" className="nav-logo">Cássia Almeida</Link>
       <ul className="nav-links">
         {links.map(({ href, label }) => {
           const isActive = href === "/" ? pathname === "/" : pathname.startsWith(href);
