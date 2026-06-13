@@ -423,10 +423,20 @@ main:has(.home-content) {
   padding-top: 20vh;
 }
 
+.home-text { position: relative; }
 .home-content .page-title { padding-top: 0; }
 .home-content .page-subtitle { padding-bottom: 0; }
 
-#astronaut-rest { width: 88px; height: 1px; }
+/* astronaut rest marker — right of the text, vertically centered to it */
+#astronaut-rest {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-left: 40px;
+  transform: translateY(-50%);
+  width: 72px;
+  height: 1px;
+}
 
 /* ── Astronaut ── */
 .astronaut {
@@ -478,6 +488,7 @@ main:has(.home-content) {
 }
 
 .wasd-row { display: flex; gap: 6px; }
+.wasd-row-top { padding-left: 46px; } /* center W over S (key 40 + gap 6) */
 
 .wasd-hint .key {
   width: 40px;

@@ -28,7 +28,7 @@ export default function Astronaut() {
     // rest position: under the subtitle (anchor element in page.tsx)
     const anchor = document.getElementById("astronaut-rest")?.getBoundingClientRect();
     let x = anchor ? anchor.left : window.innerWidth / 2 - W / 2;
-    let y = anchor ? anchor.bottom + 8 : window.innerHeight / 2;
+    let y = anchor ? anchor.top - H / 2 : window.innerHeight / 2;
     let vx = 0;
     let vy = 0;
     let facing = 1;
@@ -133,7 +133,7 @@ export default function Astronaut() {
 
       {/* keyboard-key hint, bottom centered */}
       <div className="wasd-hint" aria-hidden>
-        <div className="wasd-row">
+        <div className="wasd-row wasd-row-top">
           <kbd className={`key${active.w ? " is-active" : ""}`}>W</kbd>
         </div>
         <div className="wasd-row">
