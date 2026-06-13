@@ -19,7 +19,9 @@
       "Bash(netstat -ano)",
       "Bash(git commit -m 'feat: replace home bg image with constellation parallax backdrop *)",
       "Bash(git commit *)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(git stash *)",
+      "Bash(git push *)"
     ]
   }
 }
