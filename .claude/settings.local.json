@@ -20,8 +20,10 @@
       "Bash(git commit -m 'feat: replace home bg image with constellation parallax backdrop *)",
       "Bash(git commit *)",
       "Bash(npx tsc *)",
+      "Bash(git push *)",
+      "Bash(git fetch *)",
       "Bash(git stash *)",
-      "Bash(git push *)"
+      "Bash(git rebase *)"
     ]
   }
 }
