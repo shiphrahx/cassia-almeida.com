@@ -16,7 +16,10 @@
       "PowerShell(Start-Sleep -Seconds 5; try { $r = Invoke-WebRequest -Uri \"http://localhost:3000\" -TimeoutSec 10 -UseBasicParsing; \"Status: $\\($r.StatusCode\\)\" } catch { \"Not ready: $_\" })",
       "PowerShell(npx playwright install chromium 2>&1)",
       "PowerShell(cd \"C:\\\\Users\\\\Shiph\\\\Documents\\\\Code\\\\cassia-almeida.com\"; npx playwright eval --browser chromium \"const { chromium } = require\\('playwright'\\); \\(async \\(\\) => { const b = await chromium.launch\\(\\); const p = await b.newPage\\(\\); await p.goto\\('http://localhost:3000'\\); const footer = await p.\\\\$eval\\('footer', el => { const r = el.getBoundingClientRect\\(\\); return JSON.stringify\\({top: r.top, bottom: r.bottom, left: r.left, height: r.height, display: getComputedStyle\\(el\\).display}\\); }\\); console.log\\(footer\\); await b.close\\(\\); }\\)\\(\\)\" 2>&1)",
-      "Bash(netstat -ano)"
+      "Bash(netstat -ano)",
+      "Bash(git commit -m 'feat: replace home bg image with constellation parallax backdrop *)",
+      "Bash(git commit *)",
+      "Bash(npx tsc *)"
     ]
   }
 }
