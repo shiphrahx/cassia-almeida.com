@@ -42,7 +42,7 @@ a { color: inherit; text-decoration: none; }
   100% { background-position: 0% 50%; }
 }
 
-/* ── Layout ── */
+/* â”€â”€ Layout â”€â”€ */
 .container {
   max-width: 900px;
   margin: 0 auto;
@@ -58,7 +58,7 @@ a { color: inherit; text-decoration: none; }
   flex: 1;
 }
 
-/* ── Nav ── */
+/* â”€â”€ Nav â”€â”€ */
 nav {
   position: relative;
   z-index: 3;
@@ -70,7 +70,7 @@ nav {
 }
 
 .nav-logo {
-  font-size: 0.92rem;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--text);
@@ -96,7 +96,7 @@ nav {
 .nav-links a:hover { color: var(--text-secondary); }
 .nav-links a.active { color: var(--text); }
 
-/* ── Page title ── */
+/* â”€â”€ Page title â”€â”€ */
 .page-title {
   font-size: clamp(2.6rem, 7vw, 4rem);
   font-weight: 700;
@@ -122,7 +122,7 @@ nav {
 
 .page-subtitle strong { color: var(--text); font-weight: 500; }
 
-/* ── Sections ── */
+/* â”€â”€ Sections â”€â”€ */
 .section { margin-bottom: 52px; }
 
 .section-header {
@@ -135,14 +135,14 @@ nav {
 }
 
 .section-title {
-  font-size: 0.72rem;
+  font-size: 1rem;
   font-weight: 500;
   color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.09em;
 }
 
-/* ── List rows ── */
+/* â”€â”€ List rows â”€â”€ */
 .list { display: flex; flex-direction: column; }
 
 .list-item {
@@ -158,17 +158,17 @@ nav {
 .list-item:hover { background: var(--bg-raised); }
 .list-item:hover .list-item-title { color: #fff; }
 
-.list-item-title { font-size: 0.9rem; color: var(--text); font-weight: 400; }
+.list-item-title { font-size: 1rem; color: var(--text); font-weight: 400; }
 
 .list-item-meta {
   font-family: var(--font-mono);
-  font-size: 0.67rem;
+  font-size: 1rem;
   color: var(--text-dim);
   white-space: nowrap;
   margin-left: 20px;
 }
 
-/* ── Cards ── */
+/* â”€â”€ Cards â”€â”€ */
 .card-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -187,12 +187,12 @@ nav {
 }
 
 .card:hover { border-color: #26233a; transform: translateY(-1px); }
-.card-name { font-size: 0.95rem; font-weight: 500; color: var(--text); margin-bottom: 8px; }
-.card-desc { font-size: 0.8rem; color: var(--text-dim); line-height: 1.5; flex: 1; margin-bottom: 14px; }
+.card-name { font-size: 1rem; font-weight: 500; color: var(--text); margin-bottom: 8px; }
+.card-desc { font-size: 1rem; color: var(--text-dim); line-height: 1.5; flex: 1; margin-bottom: 14px; }
 
 .card-tag {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 1rem;
   color: var(--text-dim);
   background: rgba(255,255,255,0.03);
   padding: 3px 9px;
@@ -200,7 +200,7 @@ nav {
   align-self: flex-start;
 }
 
-/* ── Compact grid ── */
+/* â”€â”€ Compact grid â”€â”€ */
 .compact-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -219,10 +219,10 @@ nav {
 
 .compact-item:hover { border-color: #26233a; transform: translateY(-1px); }
 .compact-icon { font-size: 1.3rem; margin-bottom: 8px; display: block; }
-.compact-name { font-size: 0.82rem; color: var(--text); font-weight: 500; margin-bottom: 3px; }
-.compact-meta { font-family: var(--font-mono); font-size: 0.63rem; color: var(--text-dim); }
+.compact-name { font-size: 1rem; color: var(--text); font-weight: 500; margin-bottom: 3px; }
+.compact-meta { font-family: var(--font-mono); font-size: 1rem; color: var(--text-dim); }
 
-/* ── About ── */
+/* â”€â”€ About â”€â”€ */
 .about-intro {
   display: flex;
   gap: 32px;
@@ -274,7 +274,7 @@ nav {
 
 .about-role strong { color: var(--text); font-weight: 500; }
 
-/* ── Timeline ── */
+/* â”€â”€ Timeline â”€â”€ */
 .timeline { display: flex; flex-direction: column; gap: 0; }
 
 .timeline-item {
@@ -303,7 +303,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.65rem;
+  font-size: 1rem;
   font-family: var(--font-mono);
   color: var(--text-dim);
   overflow: hidden;
@@ -319,28 +319,28 @@ nav {
   margin-bottom: 2px;
 }
 
-.timeline-role { font-size: 0.92rem; font-weight: 500; color: var(--text); }
+.timeline-role { font-size: 1rem; font-weight: 500; color: var(--text); }
 
 .timeline-dates {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 1rem;
   color: var(--text-dim);
   white-space: nowrap;
 }
 
 .timeline-company {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: var(--text-secondary);
   margin-bottom: 6px;
 }
 
 .timeline-desc {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: var(--text-dim);
   line-height: 1.55;
 }
 
-/* ── Education ── */
+/* â”€â”€ Education â”€â”€ */
 .edu-list { display: flex; flex-direction: column; gap: 2px; }
 
 .edu-item {
@@ -353,20 +353,20 @@ nav {
 }
 
 .edu-item:hover { background: var(--bg-raised); }
-.edu-degree { font-size: 0.88rem; color: var(--text); font-weight: 400; }
-.edu-school { font-size: 0.78rem; color: var(--text-dim); margin-top: 1px; }
+.edu-degree { font-size: 1rem; color: var(--text); font-weight: 400; }
+.edu-school { font-size: 1rem; color: var(--text-dim); margin-top: 1px; }
 
 .edu-year {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 1rem;
   color: var(--text-dim);
   white-space: nowrap;
   margin-left: 20px;
 }
 
-/* ── Reading ── */
+/* â”€â”€ Reading â”€â”€ */
 .reading-year-title {
-  font-size: 0.72rem;
+  font-size: 1rem;
   font-weight: 500;
   color: var(--text-secondary);
   text-transform: uppercase;
@@ -388,18 +388,18 @@ nav {
 }
 
 .book-item:hover { background: var(--bg-raised); }
-.book-title { font-size: 0.88rem; color: var(--text); }
-.book-author { font-size: 0.78rem; color: var(--text-dim); margin-top: 1px; }
+.book-title { font-size: 1rem; color: var(--text); }
+.book-author { font-size: 1rem; color: var(--text-dim); margin-top: 1px; }
 
 .book-rating {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 1rem;
   color: var(--text-dim);
   white-space: nowrap;
   margin-left: 20px;
 }
 
-/* ── Home constellation backdrop ── */
+/* â”€â”€ Home constellation backdrop â”€â”€ */
 .parallax-backdrop {
   position: fixed;
   inset: 0;
@@ -427,7 +427,7 @@ main:has(.home-content) {
 .home-content .page-title { padding-top: 0; }
 .home-content .page-subtitle { padding-bottom: 0; }
 
-/* astronaut rest marker — right of the text, vertically centered to it */
+/* astronaut rest marker â€” right of the text, vertically centered to it */
 #astronaut-rest {
   position: absolute;
   top: 50%;
@@ -438,7 +438,7 @@ main:has(.home-content) {
   height: 1px;
 }
 
-/* ── Astronaut ── */
+/* â”€â”€ Astronaut â”€â”€ */
 .astronaut {
   position: fixed;
   top: 0;
@@ -473,7 +473,7 @@ main:has(.home-content) {
   100% { transform: scaleY(0.78); }
 }
 
-/* ── WASD keyboard hint (bottom centered) ── */
+/* â”€â”€ WASD keyboard hint (bottom centered) â”€â”€ */
 .wasd-hint {
   position: fixed;
   bottom: 100px;
@@ -497,7 +497,7 @@ main:has(.home-content) {
   align-items: center;
   justify-content: center;
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 500;
   color: var(--text-secondary);
   background: linear-gradient(180deg, #1b1925, #131019);
@@ -520,7 +520,7 @@ main:has(.home-content) {
 @media (max-width: 640px) { .wasd-hint { display: none; } }
 
 
-/* ── Footer ── */
+/* â”€â”€ Footer â”€â”€ */
 footer {
   margin-top: 32px;
   padding: 28px 0;
@@ -531,11 +531,11 @@ footer {
 }
 
 .footer-links { display: flex; gap: 20px; list-style: none; }
-.footer-links a { font-size: 0.75rem; color: var(--text-dim); transition: color 0.15s; }
+.footer-links a { font-size: 1rem; color: var(--text-dim); transition: color 0.15s; }
 .footer-links a:hover { color: var(--text-secondary); }
-.footer-copy { font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-dim); }
+.footer-copy { font-family: var(--font-mono); font-size: 1rem; color: var(--text-dim); }
 
-/* ── Responsive ── */
+/* â”€â”€ Responsive â”€â”€ */
 @media (max-width: 640px) {
   nav { flex-direction: column; gap: 14px; align-items: flex-start; }
   .nav-links { flex-wrap: wrap; }
