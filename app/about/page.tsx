@@ -12,11 +12,17 @@ export default function About() {
           />
         </div>
         <div>
-          <div className="about-name">Cássia Almeida</div>
+          <div className="about-name">Hiya</div>
           <p className="about-role">
-            Engineering leader with <strong>15+ years</strong> in software development and team management.
-            Currently <strong>Senior Engineering Manager at hyperexponential</strong>, building AI-driven
-            platforms for complex industries. Based in England, UK.
+            I'm Cássia. <strong>Engineering leader, builder, and creator</strong>.
+            <br/>
+            At hyperexponential, I help teams deliver AI-driven platforms for some of the world's most complex industries.
+            <br/><br/>
+            Outside of work, <strong>I'm passionate about creating content and sharing it online.</strong>
+
+            <br/><br/>
+            <strong>I’ve worked across gaming, finance, and tech</strong>, always focused on connecting engineering 
+            with business goals, helping people grow, and solving problems that matter.
           </p>
         </div>
       </div>
