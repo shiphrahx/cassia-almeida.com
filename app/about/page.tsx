@@ -106,14 +106,16 @@ export default function About() {
 
           <div className="timeline-item">
             <div className="timeline-left">
-              <div className="timeline-logo">DELL</div>
+              <div className="timeline-logo">
+                <ImgWithFallback src="https://static.wixstatic.com/media/36d147_0d4645ff51e440e68540748e9cb220ed~mv2.jpg/v1/fill/w_60,h_60,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/1688238534972_e%3D1697673600%26v%3Dbeta%26t%3DrQkUCyNdmuqkQJeh7Avglvm5cv8KeZC9qtQ5tN8Ga3I.jpg" alt="HP" fallback="HP" />
+              </div>
             </div>
             <div className="timeline-right">
               <div className="timeline-header">
                 <span className="timeline-role">Senior Software Engineer</span>
                 <span className="timeline-dates">Apr 2010 – Oct 2011</span>
               </div>
-              <div className="timeline-company">DELL · Brazil</div>
+              <div className="timeline-company">Hewlett-Packard · Brazil</div>
               <div className="timeline-desc">Developed Java Spring MVC web applications for internal banking systems, managed Oracle databases, and created WPF/WCF applications for stock exchange operations.</div>
             </div>
           </div>
