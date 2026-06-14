@@ -111,24 +111,10 @@ export default function About() {
             <div className="timeline-right">
               <div className="timeline-header">
                 <span className="timeline-role">Senior Software Engineer</span>
+                <span className="timeline-dates">Apr 2010 – Oct 2011</span>
               </div>
               <div className="timeline-company">DELL · Brazil</div>
               <div className="timeline-desc">Developed Java Spring MVC web applications for internal banking systems, managed Oracle databases, and created WPF/WCF applications for stock exchange operations.</div>
-            </div>
-          </div>
-
-          <div className="timeline-item">
-            <div className="timeline-left">
-              <div className="timeline-logo">
-                <ImgWithFallback src="https://static.wixstatic.com/media/36d147_0d4645ff51e440e68540748e9cb220ed~mv2.jpg/v1/fill/w_60,h_60,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/1688238534972_e%3D1697673600%26v%3Dbeta%26t%3DrQkUCyNdmuqkQJeh7Avglvm5cv8KeZC9qtQ5tN8Ga3I.jpg" alt="HP" fallback="HP" />
-              </div>
-            </div>
-            <div className="timeline-right">
-              <div className="timeline-header">
-                <span className="timeline-role">Software Engineer</span>
-                <span className="timeline-dates">Apr 2010 – Oct 2011</span>
-              </div>
-              <div className="timeline-company">Hewlett-Packard · Brazil</div>
             </div>
           </div>
 
@@ -158,31 +144,10 @@ export default function About() {
         <div className="edu-list">
           <div className="edu-item">
             <div>
-              <div className="edu-degree">Computer Science — Bachelor&apos;s Degree</div>
-              <div className="edu-school">Pontifical Catholic University of Rio Grande do Sul · Brazil</div>
+              <div className="edu-degree">Succeeding in Games Production</div>
+              <div className="edu-school">Building Better Games · England, UK</div>
             </div>
-            <span className="edu-year">2008 – 2013</span>
-          </div>
-          <div className="edu-item">
-            <div>
-              <div className="edu-degree">Agile Project Management</div>
-              <div className="edu-school">PMTech · Brazil</div>
-            </div>
-            <span className="edu-year">2013</span>
-          </div>
-          <div className="edu-item">
-            <div>
-              <div className="edu-degree">Graduate Course: IT Project Management</div>
-              <div className="edu-school">Pontifical Catholic University of Rio Grande do Sul · Brazil</div>
-            </div>
-            <span className="edu-year">2014 – 2015</span>
-          </div>
-          <div className="edu-item">
-            <div>
-              <div className="edu-degree">Creative Projects Management: Methodologies and Processes</div>
-              <div className="edu-school">Pontifical Catholic University of Rio Grande do Sul · Brazil</div>
-            </div>
-            <span className="edu-year">2015</span>
+            <span className="edu-year">2025</span>
           </div>
           <div className="edu-item">
             <div>
@@ -193,10 +158,31 @@ export default function About() {
           </div>
           <div className="edu-item">
             <div>
-              <div className="edu-degree">Succeeding in Games Production</div>
-              <div className="edu-school">Building Better Games · England, UK</div>
+              <div className="edu-degree">Creative Projects Management: Methodologies and Processes</div>
+              <div className="edu-school">Pontifical Catholic University of Rio Grande do Sul · Brazil</div>
             </div>
-            <span className="edu-year">2025</span>
+            <span className="edu-year">2015</span>
+          </div>
+          <div className="edu-item">
+            <div>
+              <div className="edu-degree">Graduate Course: IT Project Management</div>
+              <div className="edu-school">Pontifical Catholic University of Rio Grande do Sul · Brazil</div>
+            </div>
+            <span className="edu-year">2014 – 2015</span>
+          </div>
+          <div className="edu-item">
+            <div>
+              <div className="edu-degree">Agile Project Management</div>
+              <div className="edu-school">PMTech · Brazil</div>
+            </div>
+            <span className="edu-year">2013</span>
+          </div>
+          <div className="edu-item">
+            <div>
+              <div className="edu-degree">Computer Science — Bachelor&apos;s Degree</div>
+              <div className="edu-school">Pontifical Catholic University of Rio Grande do Sul · Brazil</div>
+            </div>
+            <span className="edu-year">2008 – 2013</span>
           </div>
         </div>
       </div>
