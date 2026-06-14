@@ -6,7 +6,7 @@ export default function About() {
       <div className="about-intro">
         <div className="about-avatar">
           <ImgWithFallback
-            src="https://static.wixstatic.com/media/36d147_54895d624327445da5d867b9225a0069~mv2.jpg/v1/fill/w_267,h_277,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202025-07-05%20at%2016_34_23_271fd14d.jpg"
+            src="/logos/avatar.jpg"
             alt="Cássia Almeida"
             fallback="CA"
           />
@@ -50,7 +50,7 @@ export default function About() {
           <div className="timeline-item">
             <div className="timeline-left">
               <div className="timeline-logo">
-                <ImgWithFallback src="https://static.wixstatic.com/media/36d147_0220091e36de4b899aeab0fc1928c0d2~mv2.png/v1/fill/w_60,h_60,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Screenshot%202025-09-19%20121007_edited.png" alt="Steel Hunters" fallback="SH" />
+                <ImgWithFallback src="/logos/steel-hunters.png" alt="Steel Hunters" fallback="SH" />
               </div>
             </div>
             <div className="timeline-right">
@@ -66,7 +66,7 @@ export default function About() {
           <div className="timeline-item">
             <div className="timeline-left">
               <div className="timeline-logo">
-                <ImgWithFallback src="https://static.wixstatic.com/media/36d147_2b10753af5e042eebe73e0f46ae6a39f~mv2.jpg/v1/fill/w_60,h_60,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/1641390662299_e%3D1697673600%26v%3Dbeta%26t%3DjTVA6YRGH7d1YXiXJqB6hk53wgyW9qGGbK3q24J0DNk.jpg" alt="DPS Games" fallback="DPS" />
+                <ImgWithFallback src="/logos/dps-games.jpg" alt="DPS Games" fallback="DPS" />
               </div>
             </div>
             <div className="timeline-right">
@@ -81,7 +81,7 @@ export default function About() {
           <div className="timeline-item">
             <div className="timeline-left">
               <div className="timeline-logo">
-                <ImgWithFallback src="https://static.wixstatic.com/media/36d147_6bf5c8ec45cf4e9299de5eda65c1e2d7~mv2.jpg/v1/fill/w_60,h_60,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/36d147_6bf5c8ec45cf4e9299de5eda65c1e2d7~mv2.jpg" alt="Unity" fallback="U" />
+                <ImgWithFallback src="/logos/unity.jpg" alt="Unity" fallback="U" />
               </div>
             </div>
             <div className="timeline-right">
@@ -97,7 +97,7 @@ export default function About() {
           <div className="timeline-item">
             <div className="timeline-left">
               <div className="timeline-logo">
-                <ImgWithFallback src="https://static.wixstatic.com/media/36d147_8664d24def9e4c3dbf4032e135e37af0~mv2.jpg/v1/fill/w_60,h_60,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/1614178926580_e%3D1697673600%26v%3Dbeta%26t%3DWPt_CCac_pKLXHhkJj1yCOTctLJsLbX-J3veF8r93zU.jpg" alt="Blue Insurance" fallback="BI" />
+                <ImgWithFallback src="/logos/blue-insurance.jpg" alt="Blue Insurance" fallback="BI" />
               </div>
             </div>
             <div className="timeline-right">
@@ -113,7 +113,7 @@ export default function About() {
           <div className="timeline-item">
             <div className="timeline-left">
               <div className="timeline-logo">
-                <ImgWithFallback src="https://static.wixstatic.com/media/36d147_0d4645ff51e440e68540748e9cb220ed~mv2.jpg/v1/fill/w_60,h_60,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/1688238534972_e%3D1697673600%26v%3Dbeta%26t%3DrQkUCyNdmuqkQJeh7Avglvm5cv8KeZC9qtQ5tN8Ga3I.jpg" alt="HP" fallback="HP" />
+                <ImgWithFallback src="/logos/hp.jpg" alt="HP" fallback="HP" />
               </div>
             </div>
             <div className="timeline-right">
@@ -129,7 +129,7 @@ export default function About() {
           <div className="timeline-item">
             <div className="timeline-left">
               <div className="timeline-logo">
-                <ImgWithFallback src="https://static.wixstatic.com/media/36d147_a8d1df23391846aca16e07feface212d~mv2.jpg/v1/fill/w_60,h_60,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/1619770796988_e%3D1697673600%26v%3Dbeta%26t%3DI9uX05ct-yaX51euT8d3E2IUuotaNiBtv1LIvNnHXQ4.jpg" alt="Softforce" fallback="SF" />
+                <ImgWithFallback src="/logos/softforce.jpg" alt="Softforce" fallback="SF" />
               </div>
             </div>
             <div className="timeline-right">
