@@ -424,6 +424,7 @@ main:has(.home-content) {
 }
 
 .home-text { position: relative; }
+.home-text .page-subtitle { max-width: none; white-space: nowrap; }
 .home-content .page-title { padding-top: 0; }
 .home-content .page-subtitle { padding-bottom: 0; }
 

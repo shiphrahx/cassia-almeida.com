@@ -10,8 +10,7 @@ export default function Home() {
         <div className="home-text">
           <h1 className="page-title">Cássia Almeida</h1>
           <p className="page-subtitle">
-            Engineering leader with at <strong>hyperexponential</strong>, working on
-            AI-driven platforms. <br/> I write, build, and share what I learn.
+            Engineering leader at <strong>hyperexponential</strong>, working on AI-driven platforms.
           </p>
           <div id="astronaut-rest" aria-hidden />
         </div>
