@@ -106,13 +106,26 @@ export default function About() {
 
           <div className="timeline-item">
             <div className="timeline-left">
+              <div className="timeline-logo">DELL</div>
+            </div>
+            <div className="timeline-right">
+              <div className="timeline-header">
+                <span className="timeline-role">Senior Software Engineer</span>
+              </div>
+              <div className="timeline-company">DELL · Brazil</div>
+              <div className="timeline-desc">Developed Java Spring MVC web applications for internal banking systems, managed Oracle databases, and created WPF/WCF applications for stock exchange operations.</div>
+            </div>
+          </div>
+
+          <div className="timeline-item">
+            <div className="timeline-left">
               <div className="timeline-logo">
                 <ImgWithFallback src="https://static.wixstatic.com/media/36d147_0d4645ff51e440e68540748e9cb220ed~mv2.jpg/v1/fill/w_60,h_60,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/1688238534972_e%3D1697673600%26v%3Dbeta%26t%3DrQkUCyNdmuqkQJeh7Avglvm5cv8KeZC9qtQ5tN8Ga3I.jpg" alt="HP" fallback="HP" />
               </div>
             </div>
             <div className="timeline-right">
               <div className="timeline-header">
-                <span className="timeline-role">Senior Software Engineer</span>
+                <span className="timeline-role">Software Engineer</span>
                 <span className="timeline-dates">Apr 2010 – Oct 2011</span>
               </div>
               <div className="timeline-company">Hewlett-Packard · Brazil</div>
@@ -131,6 +144,7 @@ export default function About() {
                 <span className="timeline-dates">Oct 2011 – May 2014</span>
               </div>
               <div className="timeline-company">Softforce · Brazil</div>
+              <div className="timeline-desc">Led teams delivering cloud-enabled and ML-driven services spanning web development, internal tools in Python and C++, and machine learning applications.</div>
             </div>
           </div>
 
@@ -151,10 +165,24 @@ export default function About() {
           </div>
           <div className="edu-item">
             <div>
+              <div className="edu-degree">Agile Project Management</div>
+              <div className="edu-school">PMTech · Brazil</div>
+            </div>
+            <span className="edu-year">2013</span>
+          </div>
+          <div className="edu-item">
+            <div>
               <div className="edu-degree">Graduate Course: IT Project Management</div>
               <div className="edu-school">Pontifical Catholic University of Rio Grande do Sul · Brazil</div>
             </div>
             <span className="edu-year">2014 – 2015</span>
+          </div>
+          <div className="edu-item">
+            <div>
+              <div className="edu-degree">Creative Projects Management: Methodologies and Processes</div>
+              <div className="edu-school">Pontifical Catholic University of Rio Grande do Sul · Brazil</div>
+            </div>
+            <span className="edu-year">2015</span>
           </div>
           <div className="edu-item">
             <div>
@@ -169,6 +197,35 @@ export default function About() {
               <div className="edu-school">Building Better Games · England, UK</div>
             </div>
             <span className="edu-year">2025</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="section">
+        <div className="section-header">
+          <span className="section-title">Awards &amp; Certifications</span>
+        </div>
+        <div className="edu-list">
+          <div className="edu-item">
+            <div>
+              <div className="edu-degree">Certified Scrum Master</div>
+            </div>
+          </div>
+          <div className="edu-item">
+            <div>
+              <div className="edu-degree">Certified Scrum Developer</div>
+            </div>
+          </div>
+          <div className="edu-item">
+            <div>
+              <div className="edu-degree">Certified Product Owner Open</div>
+            </div>
+          </div>
+          <div className="edu-item">
+            <div>
+              <div className="edu-degree">On the Spot Award</div>
+              <div className="edu-school">DELL</div>
+            </div>
           </div>
         </div>
       </div>
