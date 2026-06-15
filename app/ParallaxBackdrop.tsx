@@ -46,8 +46,8 @@ export default function ParallaxBackdrop() {
       canvas.style.height = `${h}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      // sparse: ~1 star per 7000px², capped
-      const count = Math.min(220, Math.floor((w * h) / 7000));
+      // ~1 star per 4000px², capped
+      const count = Math.min(400, Math.floor((w * h) / 4000));
       stars = Array.from({ length: count }, () => {
         const depth = Math.random();
         // most stars dim; a few notably brighter
