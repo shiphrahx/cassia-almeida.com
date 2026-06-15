@@ -2,7 +2,22 @@
 
 import { useEffect, useRef } from "react";
 
-type Dot = { x: number; y: number; vx: number; vy: number };
+type Star = {
+  x: number;
+  y: number;
+  r: number; // radius
+  base: number; // base brightness 0..1
+  depth: number; // 0 (far) .. 1 (near) — parallax + size
+  tw: number; // twinkle phase
+  twSpeed: number; // twinkle speed
+  hue: 0 | 1 | 2; // 0 white, 1 violet-ish, 2 cyan-ish
+};
+
+const COLORS: Record<0 | 1 | 2, [number, number, number]> = {
+  0: [235, 233, 245], // near-white
+  1: [191, 173, 255], // soft violet
+  2: [150, 225, 245], // soft cyan
+};
 
 export default function ParallaxBackdrop() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -18,10 +33,8 @@ export default function ParallaxBackdrop() {
     let w = 0;
     let h = 0;
     let dpr = 1;
-    let dots: Dot[] = [];
-    const mouse = { x: -9999, y: -9999 };
-    const linkDist = 130;
-    const mouseDist = 180;
+    let stars: Star[] = [];
+    const parallax = { x: 0, y: 0, tx: 0, ty: 0 };
 
     const build = () => {
       dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -33,61 +46,62 @@ export default function ParallaxBackdrop() {
       canvas.style.height = `${h}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      const count = Math.min(160, Math.floor((w * h) / 9000));
-      dots = Array.from({ length: count }, () => ({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        vx: (Math.random() - 0.5) * 0.22,
-        vy: (Math.random() - 0.5) * 0.22,
-      }));
+      // sparse: ~1 star per 7000px², capped
+      const count = Math.min(220, Math.floor((w * h) / 7000));
+      stars = Array.from({ length: count }, () => {
+        const depth = Math.random();
+        // most stars dim; a few notably brighter
+        const bright = Math.random();
+        const base = bright > 0.9 ? 0.85 + Math.random() * 0.15 : 0.2 + bright * 0.45;
+        const r = (depth > 0.85 ? 1.5 : 0.6) + Math.random() * 1.1 * depth;
+        const hueRoll = Math.random();
+        const hue: 0 | 1 | 2 = hueRoll > 0.88 ? 2 : hueRoll > 0.76 ? 1 : 0;
+        return {
+          x: Math.random() * w,
+          y: Math.random() * h,
+          r,
+          base,
+          depth,
+          tw: Math.random() * Math.PI * 2,
+          twSpeed: 0.004 + Math.random() * 0.012,
+          hue,
+        };
+      });
     };
 
     const draw = () => {
       ctx.clearRect(0, 0, w, h);
 
-      for (const d of dots) {
-        d.x += d.vx;
-        d.y += d.vy;
-        if (d.x < 0 || d.x > w) d.vx *= -1;
-        if (d.y < 0 || d.y > h) d.vy *= -1;
+      // ease parallax toward target
+      parallax.x += (parallax.tx - parallax.x) * 0.05;
+      parallax.y += (parallax.ty - parallax.y) * 0.05;
 
-        // gentle cursor attraction — the playful tug
-        const mdx = mouse.x - d.x;
-        const mdy = mouse.y - d.y;
-        const md = Math.hypot(mdx, mdy);
-        if (md < mouseDist && md > 0) {
-          const pull = (1 - md / mouseDist) * 0.4;
-          d.x += (mdx / md) * pull;
-          d.y += (mdy / md) * pull;
+      for (const s of stars) {
+        s.tw += s.twSpeed;
+        // twinkle: brighter stars twinkle less
+        const flicker = 1 - (1 - s.base) * 0.5 * (0.5 + 0.5 * Math.sin(s.tw));
+        const alpha = Math.min(1, s.base * flicker);
+
+        // parallax: nearer stars shift more
+        const px = s.x + parallax.x * (s.depth * 18);
+        const py = s.y + parallax.y * (s.depth * 18);
+
+        const [cr, cg, cb] = COLORS[s.hue];
+
+        // glow for the brightest few
+        if (s.base > 0.8) {
+          const g = ctx.createRadialGradient(px, py, 0, px, py, s.r * 4);
+          g.addColorStop(0, `rgba(${cr},${cg},${cb},${alpha * 0.5})`);
+          g.addColorStop(1, `rgba(${cr},${cg},${cb},0)`);
+          ctx.fillStyle = g;
+          ctx.beginPath();
+          ctx.arc(px, py, s.r * 4, 0, Math.PI * 2);
+          ctx.fill();
         }
-      }
 
-      // links between near dots
-      for (let i = 0; i < dots.length; i++) {
-        for (let j = i + 1; j < dots.length; j++) {
-          const dx = dots[i].x - dots[j].x;
-          const dy = dots[i].y - dots[j].y;
-          const dist = Math.hypot(dx, dy);
-          if (dist < linkDist) {
-            const a = (1 - dist / linkDist) * 0.16;
-            ctx.strokeStyle = `rgba(167,139,250,${a})`;
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(dots[i].x, dots[i].y);
-            ctx.lineTo(dots[j].x, dots[j].y);
-            ctx.stroke();
-          }
-        }
-      }
-
-      // dots — brighten near cursor
-      for (const d of dots) {
-        const md = Math.hypot(mouse.x - d.x, mouse.y - d.y);
-        const near = md < mouseDist ? 1 - md / mouseDist : 0;
-        const r = 1.1 + near * 1.4;
-        ctx.fillStyle = `rgba(${near > 0 ? "120,225,245" : "150,140,180"},${0.32 + near * 0.5})`;
+        ctx.fillStyle = `rgba(${cr},${cg},${cb},${alpha})`;
         ctx.beginPath();
-        ctx.arc(d.x, d.y, r, 0, Math.PI * 2);
+        ctx.arc(px, py, s.r, 0, Math.PI * 2);
         ctx.fill();
       }
     };
@@ -100,20 +114,15 @@ export default function ParallaxBackdrop() {
 
     const onResize = () => build();
     const onMove = (e: MouseEvent) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
-    };
-    const onLeave = () => {
-      mouse.x = -9999;
-      mouse.y = -9999;
+      parallax.tx = (e.clientX / window.innerWidth - 0.5) * 2;
+      parallax.ty = (e.clientY / window.innerHeight - 0.5) * 2;
     };
 
     build();
     if (reduced) {
-      draw(); // static frame, no motion
+      draw(); // static starfield, no twinkle/parallax
     } else {
       window.addEventListener("mousemove", onMove);
-      window.addEventListener("mouseout", onLeave);
       loop();
     }
     window.addEventListener("resize", onResize);
@@ -121,7 +130,6 @@ export default function ParallaxBackdrop() {
     return () => {
       cancelAnimationFrame(frame);
       window.removeEventListener("mousemove", onMove);
-      window.removeEventListener("mouseout", onLeave);
       window.removeEventListener("resize", onResize);
     };
   }, []);
