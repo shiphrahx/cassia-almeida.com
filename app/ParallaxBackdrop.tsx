@@ -46,14 +46,14 @@ export default function ParallaxBackdrop() {
       canvas.style.height = `${h}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      // ~1 star per 4000px², capped
-      const count = Math.min(400, Math.floor((w * h) / 4000));
+      // dense: ~1 star per 1600px², capped
+      const count = Math.min(900, Math.floor((w * h) / 1600));
       stars = Array.from({ length: count }, () => {
         const depth = Math.random();
-        // most stars dim; a few notably brighter
+        // most stars very dim; a rare few brighter
         const bright = Math.random();
-        const base = bright > 0.9 ? 0.85 + Math.random() * 0.15 : 0.2 + bright * 0.45;
-        const r = (depth > 0.85 ? 1.5 : 0.6) + Math.random() * 1.1 * depth;
+        const base = bright > 0.96 ? 0.5 + Math.random() * 0.3 : 0.08 + bright * 0.22;
+        const r = 0.4 + Math.random() * 0.6 * depth;
         const hueRoll = Math.random();
         const hue: 0 | 1 | 2 = hueRoll > 0.88 ? 2 : hueRoll > 0.76 ? 1 : 0;
         return {
@@ -88,14 +88,14 @@ export default function ParallaxBackdrop() {
 
         const [cr, cg, cb] = COLORS[s.hue];
 
-        // glow for the brightest few
-        if (s.base > 0.8) {
-          const g = ctx.createRadialGradient(px, py, 0, px, py, s.r * 4);
-          g.addColorStop(0, `rgba(${cr},${cg},${cb},${alpha * 0.5})`);
+        // faint glow only for the rare brightest
+        if (s.base > 0.65) {
+          const g = ctx.createRadialGradient(px, py, 0, px, py, s.r * 3);
+          g.addColorStop(0, `rgba(${cr},${cg},${cb},${alpha * 0.3})`);
           g.addColorStop(1, `rgba(${cr},${cg},${cb},0)`);
           ctx.fillStyle = g;
           ctx.beginPath();
-          ctx.arc(px, py, s.r * 4, 0, Math.PI * 2);
+          ctx.arc(px, py, s.r * 3, 0, Math.PI * 2);
           ctx.fill();
         }
 
