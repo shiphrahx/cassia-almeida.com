@@ -25,7 +25,11 @@
       "Bash(git stash *)",
       "Bash(git rebase *)",
       "WebFetch(domain:www.cassia-almeida.com)",
-      "Bash(xxd)"
+      "Bash(xxd)",
+      "Read(//Users/cassia.almeida/**)",
+      "Read(//Users/cassia.almeida/.nvm/**)",
+      "Bash(git checkout *)",
+      "Bash(git config *)"
     ]
   }
 }
