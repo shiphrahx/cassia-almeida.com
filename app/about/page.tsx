@@ -67,10 +67,10 @@ export default function About() {
               <div className="timeline-company">DPS Games · England, UK</div>
               <div className="timeline-desc">
                 Leader of the Tech Organisation for <a href="https://wargaming.com/en/news/wargaming-new-title-steel-hunters/" target="_blank" rel="noopener noreferrer">Steel Hunters</a> 🚀🚀
-                <br/><br/>
+                <br /><br />
                 Led a cross-functional team of 30+ to deliver a global multiplayer game.
-                I oversaw Backend, DevOps, Engine, and Tools — driving architecture, scalability, 
-                and live operations while ensuring alignment with studio goals and timely, 
+                I oversaw Backend, DevOps, Engine, and Tools, driving architecture, scalability,
+                and live operations while ensuring alignment with studio goals and timely,
                 high-quality delivery.
               </div>
             </div>
@@ -88,7 +88,14 @@ export default function About() {
                 <span className="timeline-dates">Jan 2017 – Jan 2022</span>
               </div>
               <div className="timeline-company">Unity · Dublin, Ireland</div>
-              <div className="timeline-desc">Led a team delivering cloud-enabled and ML-driven services, including AI-driven tools such as single-image to normal map generation in Unity ArtEngine.</div>
+              <div className="timeline-desc">
+                Led a team delivering cloud-enabled and ML-driven services, spanning web development, internal tools in Python and C++,
+                and applied machine learning in content creation workflows.
+                <br /><br />
+                I directed technical strategy and team operations, oversaw projects from web apps to AI-powered
+                features like single-image to normal map generation in Unity ArtEngine, and managed timelines and budgets
+                to ensure smooth, on-time delivery.
+              </div>
             </div>
           </div>
 
@@ -104,7 +111,20 @@ export default function About() {
                 <span className="timeline-dates">May 2014 – Oct 2016</span>
               </div>
               <div className="timeline-company">Blue Insurance · Dublin, Ireland</div>
-              <div className="timeline-desc">Led a distributed Agile team delivering .NET web products. Built pet insurance, travel, and car hire excess platforms.</div>
+              <div className="timeline-desc">
+                Led a development team delivering web products using .NET technologies.<br />
+                I oversaw .NET Core applications with SQL Server backends, managed on-premise infrastructure, 
+                set up CI/CD pipelines, and planned development roadmaps aligned with business goals.<br /><br />
+                Some products I helped to build:
+                <ul>
+                  <li>CarHireExcess: <a href="https://www.carhireexcess.com/" target="_blank" rel="noopener noreferrer">https://www.carhireexcess.com/</a></li>
+                  <li>PetInsurance: <a href="https://www.petinsurance.ie" target="_blank" rel="noopener noreferrer">https://www.petinsurance.ie</a></li>
+                  <li>InsureYourPaws: <a href="https://www.insureyourpaws.co.uk" target="_blank" rel="noopener noreferrer">https://www.insureyourpaws.co.uk</a></li>
+                  <li>Multitrip: <a href="https://www.multitrip.com" target="_blank" rel="noopener noreferrer">https://www.multitrip.com</a></li>
+                  <li>AnPost Insurance: <a href="https://anpostinsurance.petquote.ie" target="_blank" rel="noopener noreferrer">https://anpostinsurance.petquote.ie</a></li>
+                </ul>
+
+              </div>
             </div>
           </div>
 
