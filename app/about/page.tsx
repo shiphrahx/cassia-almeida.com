@@ -128,6 +128,22 @@ export default function About() {
             </div>
           </div>
 
+           <div className="timeline-item">
+            <div className="timeline-left">
+              <div className="timeline-logo">
+                <ImgWithFallback src="/logos/softforce.png" alt="Softforce" fallback="SF" />
+              </div>
+            </div>
+            <div className="timeline-right">
+              <div className="timeline-header">
+                <span className="timeline-role">Software Engineer</span>
+                <span className="timeline-dates">Oct 2011 – May 2014</span>
+              </div>
+              <div className="timeline-company">Softforce · Brazil</div>
+              <div className="timeline-desc">Led teams delivering cloud-enabled and ML-driven services spanning web development, internal tools in Python and C++, and machine learning applications.</div>
+            </div>
+          </div>
+
           <div className="timeline-item">
             <div className="timeline-left">
               <div className="timeline-logo">
@@ -141,22 +157,6 @@ export default function About() {
               </div>
               <div className="timeline-company">Hewlett-Packard · Brazil</div>
               <div className="timeline-desc">Developed Java Spring MVC web applications for internal banking systems, managed Oracle databases, and created WPF/WCF applications for stock exchange operations.</div>
-            </div>
-          </div>
-
-          <div className="timeline-item">
-            <div className="timeline-left">
-              <div className="timeline-logo">
-                <ImgWithFallback src="/logos/softforce.jpg" alt="Softforce" fallback="SF" />
-              </div>
-            </div>
-            <div className="timeline-right">
-              <div className="timeline-header">
-                <span className="timeline-role">Software Engineer</span>
-                <span className="timeline-dates">Oct 2011 – May 2014</span>
-              </div>
-              <div className="timeline-company">Softforce · Brazil</div>
-              <div className="timeline-desc">Led teams delivering cloud-enabled and ML-driven services spanning web development, internal tools in Python and C++, and machine learning applications.</div>
             </div>
           </div>
 
