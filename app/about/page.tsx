@@ -15,13 +15,13 @@ export default function About() {
           <div className="about-name">Hiya</div>
           <p className="about-role">
             I'm Cássia. <strong>Engineering leader, builder, and creator</strong>.
-            <br/>
+            <br />
             At hyperexponential, I help teams deliver AI-driven platforms for some of the world's most complex industries.
-            <br/><br/>
+            <br /><br />
             Outside of work, <strong>I'm passionate about creating content and sharing it online.</strong>
 
-            <br/><br/>
-            <strong>I’ve worked across gaming, finance, and tech</strong>, always focused on connecting engineering 
+            <br /><br />
+            <strong>I’ve worked across gaming, finance, and tech</strong>, always focused on connecting engineering
             with business goals, helping people grow, and solving problems that matter.
           </p>
         </div>
@@ -35,7 +35,9 @@ export default function About() {
 
           <div className="timeline-item">
             <div className="timeline-left">
-              <div className="timeline-logo">hx</div>
+              <div className="timeline-logo">
+                <ImgWithFallback src="/logos/hx.png" alt="hyperexponential" fallback="hx" />
+              </div>
             </div>
             <div className="timeline-right">
               <div className="timeline-header">
@@ -43,23 +45,11 @@ export default function About() {
                 <span className="timeline-dates">Sep 2025 – Present</span>
               </div>
               <div className="timeline-company">hyperexponential · England, UK</div>
-              <div className="timeline-desc">Building AI-driven platforms that power smarter decision-making for complex industries. Working on hx Renew, a flagship pricing decision intelligence platform.</div>
-            </div>
-          </div>
-
-          <div className="timeline-item">
-            <div className="timeline-left">
-              <div className="timeline-logo">
-                <ImgWithFallback src="/logos/steel-hunters.png" alt="Steel Hunters" fallback="SH" />
+              <div className="timeline-desc">
+                Building AI-driven platforms that power smarter decision-making for complex industries.
+                <br />
+                Working on hx Renew, a flagship pricing decision intelligence platform.
               </div>
-            </div>
-            <div className="timeline-right">
-              <div className="timeline-header">
-                <span className="timeline-role">Leader of Tech Organisation</span>
-                <span className="timeline-dates">Aug 2023 – Sep 2025</span>
-              </div>
-              <div className="timeline-company">Steel Hunters · England, UK</div>
-              <div className="timeline-desc">Led a cross-functional team of 30+ delivering a global multiplayer game. Oversaw Backend, DevOps, Engine, and Tools development.</div>
             </div>
           </div>
 
@@ -72,9 +62,17 @@ export default function About() {
             <div className="timeline-right">
               <div className="timeline-header">
                 <span className="timeline-role">Tech Producer</span>
-                <span className="timeline-dates">Jan 2022 – Jul 2023</span>
+                <span className="timeline-dates">Aug 2023 – Sep 2025</span>
               </div>
               <div className="timeline-company">DPS Games · England, UK</div>
+              <div className="timeline-desc">
+                Leader of the Tech Organisation for <a href="https://wargaming.com/en/news/wargaming-new-title-steel-hunters/" target="_blank" rel="noopener noreferrer">Steel Hunters</a> 🚀🚀
+                <br/><br/>
+                Led a cross-functional team of 30+ to deliver a global multiplayer game.
+                I oversaw Backend, DevOps, Engine, and Tools — driving architecture, scalability, 
+                and live operations while ensuring alignment with studio goals and timely, 
+                high-quality delivery.
+              </div>
             </div>
           </div>
 
