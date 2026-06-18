@@ -29,7 +29,10 @@
       "Read(//Users/cassia.almeida/**)",
       "Read(//Users/cassia.almeida/.nvm/**)",
       "Bash(git checkout *)",
-      "Bash(git config *)"
+      "Bash(git config *)",
+      "Bash(git rm *)",
+      "PowerShell(git add components/Footer.tsx app/globals.css)",
+      "PowerShell(git commit -m \"Replace footer text links with brand logos, add Notion\")"
     ]
   }
 }

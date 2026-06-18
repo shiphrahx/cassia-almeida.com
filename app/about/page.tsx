@@ -140,7 +140,11 @@ export default function About() {
                 <span className="timeline-dates">Oct 2011 – May 2014</span>
               </div>
               <div className="timeline-company">Softforce · Brazil</div>
-              <div className="timeline-desc">Led teams delivering cloud-enabled and ML-driven services spanning web development, internal tools in Python and C++, and machine learning applications.</div>
+              <div className="timeline-desc">
+                Built a .NET/C# real-time transport tracking app with Google Maps, delivering accurate ETAs, fleet monitoring, 
+                route optimisation, and emergency handling. Also developed SharePoint-hosted apps for an 80+ store fashion retailer 
+                and mobile web apps using jQuery Mobile.
+              </div>
             </div>
           </div>
 
@@ -156,7 +160,10 @@ export default function About() {
                 <span className="timeline-dates">Apr 2010 – Oct 2011</span>
               </div>
               <div className="timeline-company">Hewlett-Packard · Brazil</div>
-              <div className="timeline-desc">Developed Java Spring MVC web applications for internal banking systems, managed Oracle databases, and created WPF/WCF applications for stock exchange operations.</div>
+              <div className="timeline-desc">
+                Developed Java Spring MVC web applications for an internal banking system, integrating with multiple external systems 
+                and Oracle databases. Also built WPF and WCF applications related to stock exchange operations.
+              </div>
             </div>
           </div>
 
