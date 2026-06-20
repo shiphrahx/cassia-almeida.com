@@ -340,6 +340,44 @@ nav {
   line-height: 1.55;
 }
 
+.timeline-desc a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--text-secondary);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s, color 0.15s;
+}
+.timeline-desc a:hover {
+  color: #fff;
+  text-decoration-color: var(--text);
+}
+
+.timeline-products {
+  list-style: none;
+  margin: 10px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.timeline-products li {
+  position: relative;
+  padding-left: 18px;
+}
+.timeline-products li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-secondary);
+}
+.timeline-products li strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
 /* â”€â”€ Education â”€â”€ */
 .edu-list { display: flex; flex-direction: column; gap: 2px; }
 

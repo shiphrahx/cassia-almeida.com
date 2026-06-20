@@ -66,7 +66,7 @@ export default function About() {
               </div>
               <div className="timeline-company">DPS Games · England, UK</div>
               <div className="timeline-desc">
-                Leader of the Tech Organisation for <a href="https://wargaming.com/en/news/wargaming-new-title-steel-hunters/" target="_blank" rel="noopener noreferrer">Steel Hunters</a> 🚀🚀
+                Leader of the Tech Organisation for <a href="https://wargaming.com/en/news/wargaming-new-title-steel-hunters/" target="_blank" rel="noopener noreferrer">Steel Hunters</a> 
                 <br /><br />
                 Led a cross-functional team of 30+ to deliver a global multiplayer game.
                 I oversaw Backend, DevOps, Engine, and Tools, driving architecture, scalability,
@@ -116,12 +116,12 @@ export default function About() {
                 I oversaw .NET Core applications with SQL Server backends, managed on-premise infrastructure, 
                 set up CI/CD pipelines, and planned development roadmaps aligned with business goals.<br /><br />
                 Some products I helped to build:
-                <ul>
-                  <li>CarHireExcess: <a href="https://www.carhireexcess.com/" target="_blank" rel="noopener noreferrer">https://www.carhireexcess.com/</a></li>
-                  <li>PetInsurance: <a href="https://www.petinsurance.ie" target="_blank" rel="noopener noreferrer">https://www.petinsurance.ie</a></li>
-                  <li>InsureYourPaws: <a href="https://www.insureyourpaws.co.uk" target="_blank" rel="noopener noreferrer">https://www.insureyourpaws.co.uk</a></li>
-                  <li>Multitrip: <a href="https://www.multitrip.com" target="_blank" rel="noopener noreferrer">https://www.multitrip.com</a></li>
-                  <li>AnPost Insurance: <a href="https://anpostinsurance.petquote.ie" target="_blank" rel="noopener noreferrer">https://anpostinsurance.petquote.ie</a></li>
+                <ul className="timeline-products">
+                  <li><strong>CarHireExcess</strong>: <a href="https://www.carhireexcess.com/" target="_blank" rel="noopener noreferrer">carhireexcess.com</a></li>
+                  <li><strong>PetInsurance</strong>: <a href="https://www.petinsurance.ie" target="_blank" rel="noopener noreferrer">petinsurance.ie</a></li>
+                  <li><strong>InsureYourPaws</strong>: <a href="https://www.insureyourpaws.co.uk" target="_blank" rel="noopener noreferrer">insureyourpaws.co.uk</a></li>
+                  <li><strong>Multitrip</strong>: <a href="https://www.multitrip.com" target="_blank" rel="noopener noreferrer">multitrip.com</a></li>
+                  <li><strong>AnPost Insurance</strong>: <a href="https://anpostinsurance.petquote.ie" target="_blank" rel="noopener noreferrer">anpostinsurance.petquote.ie</a></li>
                 </ul>
 
               </div>

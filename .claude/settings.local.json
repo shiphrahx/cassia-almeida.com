@@ -32,7 +32,9 @@
       "Bash(git config *)",
       "Bash(git rm *)",
       "PowerShell(git add components/Footer.tsx app/globals.css)",
-      "PowerShell(git commit -m \"Replace footer text links with brand logos, add Notion\")"
+      "PowerShell(git commit -m \"Replace footer text links with brand logos, add Notion\")",
+      "PowerShell(git add -A)",
+      "PowerShell(git commit -m \"Style about-page links distinctly and turn product list into bulleted list\")"
     ]
   }
 }
