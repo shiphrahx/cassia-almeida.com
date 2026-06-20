@@ -117,11 +117,11 @@ export default function About() {
                 set up CI/CD pipelines, and planned development roadmaps aligned with business goals.<br /><br />
                 Some products I helped to build:
                 <ul className="timeline-products">
-                  <li><strong>CarHireExcess</strong>: <a href="https://www.carhireexcess.com/" target="_blank" rel="noopener noreferrer">carhireexcess.com</a></li>
-                  <li><strong>PetInsurance</strong>: <a href="https://www.petinsurance.ie" target="_blank" rel="noopener noreferrer">petinsurance.ie</a></li>
-                  <li><strong>InsureYourPaws</strong>: <a href="https://www.insureyourpaws.co.uk" target="_blank" rel="noopener noreferrer">insureyourpaws.co.uk</a></li>
-                  <li><strong>Multitrip</strong>: <a href="https://www.multitrip.com" target="_blank" rel="noopener noreferrer">multitrip.com</a></li>
-                  <li><strong>AnPost Insurance</strong>: <a href="https://anpostinsurance.petquote.ie" target="_blank" rel="noopener noreferrer">anpostinsurance.petquote.ie</a></li>
+                  <li>CarHireExcess: <a href="https://www.carhireexcess.com/" target="_blank" rel="noopener noreferrer">carhireexcess.com</a></li>
+                  <li>PetInsurance: <a href="https://www.petinsurance.ie" target="_blank" rel="noopener noreferrer">petinsurance.ie</a></li>
+                  <li>InsureYourPaws: <a href="https://www.insureyourpaws.co.uk" target="_blank" rel="noopener noreferrer">insureyourpaws.co.uk</a></li>
+                  <li>Multitrip: <a href="https://www.multitrip.com" target="_blank" rel="noopener noreferrer">multitrip.com</a></li>
+                  <li>AnPost Insurance: <a href="https://anpostinsurance.petquote.ie" target="_blank" rel="noopener noreferrer">anpostinsurance.petquote.ie</a></li>
                 </ul>
 
               </div>
