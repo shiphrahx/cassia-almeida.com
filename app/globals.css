@@ -341,14 +341,14 @@ nav {
 }
 
 .timeline-desc a {
-  color: var(--text-secondary);
+  color: inherit;
   text-decoration: underline;
   text-decoration-color: var(--text-dim);
   text-underline-offset: 3px;
   transition: text-decoration-color 0.15s, color 0.15s;
 }
 .timeline-desc a:hover {
-  color: var(--text);
+  color: var(--text-secondary);
   text-decoration-color: var(--text-secondary);
 }
 
