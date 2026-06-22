@@ -1,4 +1,36 @@
-export default function Projects() {
+import projects, { type Project } from "@/data/projects";
+import { getRepoMeta } from "@/lib/github";
+
+type EnrichedProject = Project & {
+  name: string;
+  year: number | null;
+  language: string | null;
+  createdAt: string | null;
+  caption: string | null;
+};
+
+const byCreatedDesc = (a: EnrichedProject, b: EnrichedProject) =>
+  (b.createdAt ?? "").localeCompare(a.createdAt ?? "");
+
+export default async function Projects() {
+  const enriched: EnrichedProject[] = await Promise.all(
+    projects.map(async (project) => {
+      const meta = await getRepoMeta(project.url);
+      return {
+        ...project,
+        name: meta.name,
+        year: meta.year,
+        language: meta.language,
+        createdAt: meta.createdAt,
+        caption: project.description ?? meta.description,
+      };
+    })
+  );
+
+  const starred = enriched.filter((p) => p.category === "starred").sort(byCreatedDesc);
+  const other = enriched.filter((p) => p.category === "other").sort(byCreatedDesc);
+  const archived = enriched.filter((p) => p.category === "archived").sort(byCreatedDesc);
+
   return (
     <>
       <h1 className="page-title">Projects</h1>
@@ -7,63 +39,51 @@ export default function Projects() {
         <strong>building in public</strong>.
       </p>
 
-      <div className="section">
-        <div className="section-header"><span className="section-title">Starred</span></div>
-        <div className="card-grid">
-          <a className="card" href="https://github.com/shiphrahx/git-tomato" target="_blank" rel="noopener noreferrer">
-            <div className="card-name">git-tomato</div>
-            <div className="card-desc">Pomodoro timer that logs your git commits per focus session. See exactly what you built, not just how long you worked.</div>
-            <span className="card-tag">javascript</span>
-          </a>
-          <a className="card" href="https://github.com/shiphrahx/Caliber" target="_blank" rel="noopener noreferrer">
-            <div className="card-name">Caliber</div>
-            <div className="card-desc">A lightweight web platform for engineering managers to run their day-to-day in one place — teams, 1:1s, tasks, delivery signals, and personal growth.</div>
-            <span className="card-tag">typescript</span>
-          </a>
+      {starred.length > 0 && (
+        <div className="section">
+          <div className="section-header"><span className="section-title">Starred</span></div>
+          <div className="card-grid">
+            {starred.map((p) => (
+              <a key={p.url} className="card" href={p.url} target="_blank" rel="noopener noreferrer">
+                <div className="card-name">{p.name}</div>
+                {p.caption && <div className="card-desc">{p.caption}</div>}
+                {p.language && <span className="card-tag">{p.language.toLowerCase()}</span>}
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
-      <div className="section">
-        <div className="section-header"><span className="section-title">Other Projects</span></div>
-        <div className="list">
-          <a className="list-item" href="https://github.com/shiphrahx/pixpaws" target="_blank" rel="noopener noreferrer">
-            <div>
-              <div className="list-item-title">pixpaws</div>
-              <div className="list-item-sub">A free, client-side pixel art generator for pet photos using classic gaming palettes.</div>
-            </div>
-            <span className="list-item-meta">2026</span>
-          </a>
-          <a className="list-item" href="https://github.com/shiphrahx/AI-for-engineering-leaders" target="_blank" rel="noopener noreferrer">
-            <div>
-              <div className="list-item-title">AI-for-engineering-leaders</div>
-              <div className="list-item-sub">Practical AI playbooks for engineering leaders to improve delivery, decisions, and team productivity.</div>
-            </div>
-            <span className="list-item-meta">2026</span>
-          </a>
-          <a className="list-item" href="https://github.com/shiphrahx/Ashenveld" target="_blank" rel="noopener noreferrer">
-            <div>
-              <div className="list-item-title">Ashenveld</div>
-              <div className="list-item-sub">An experimental text-driven RPG with branching storytelling in a dark fantasy setting.</div>
-            </div>
-            <span className="list-item-meta">2026</span>
-          </a>
-          <a className="list-item" href="https://github.com/shiphrahx/Pulse" target="_blank" rel="noopener noreferrer">
-            <div>
-              <div className="list-item-title">Pulse</div>
-              <div className="list-item-sub">A modern one-page portfolio and vCard template built with Vite and React.</div>
-            </div>
-            <span className="list-item-meta">2025</span>
-          </a>
+      {other.length > 0 && (
+        <div className="section">
+          <div className="section-header"><span className="section-title">Other Projects</span></div>
+          <div className="list">
+            {other.map((p) => (
+              <a key={p.url} className="list-item" href={p.url} target="_blank" rel="noopener noreferrer">
+                <div>
+                  <div className="list-item-title">{p.name}</div>
+                  {p.caption && <div className="list-item-sub">{p.caption}</div>}
+                </div>
+                {p.year && <span className="list-item-meta">{p.year}</span>}
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
-      <div className="section">
-        <div className="section-header"><span className="section-title">Archived</span></div>
-        <div className="list">
-          <a className="list-item" href="https://github.com/shiphrahx/VouJuntoCom" target="_blank" rel="noopener noreferrer"><span className="list-item-title">VouJuntoCom</span><span className="list-item-meta">2016</span></a>
-          <a className="list-item" href="https://github.com/shiphrahx/CasaLiberdade.github.io" target="_blank" rel="noopener noreferrer"><span className="list-item-title">CasaLiberdade.github.io</span><span className="list-item-meta">2015</span></a>
+      {archived.length > 0 && (
+        <div className="section">
+          <div className="section-header"><span className="section-title">Archived</span></div>
+          <div className="list">
+            {archived.map((p) => (
+              <a key={p.url} className="list-item" href={p.url} target="_blank" rel="noopener noreferrer">
+                <span className="list-item-title">{p.name}</span>
+                {p.year && <span className="list-item-meta">{p.year}</span>}
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 }
