@@ -162,6 +162,44 @@ nav {
 
 .list-item-sub { font-size: 1rem; color: var(--text-dim); margin-top: 2px; line-height: 1.45; }
 
+/* Project rows: whole row links to the live site (stretched link), with a
+   GitHub repo icon that always sits beside the year, above the overlay. */
+.project-row {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-radius: 8px;
+  transition: background 0.12s;
+}
+
+.project-row:hover { background: var(--bg-raised); }
+.project-row:hover .list-item-title { color: #fff; }
+
+.project-row-main { display: block; color: inherit; min-width: 0; }
+.project-row-main::after { content: ""; position: absolute; inset: 0; z-index: 0; }
+
+.project-row-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 20px;
+  white-space: nowrap;
+}
+
+.project-row-right .list-item-meta { margin-left: 0; }
+
+.project-repo {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  color: var(--text-dim);
+  transition: color 0.12s;
+}
+
+.project-repo:hover { color: var(--text); }
+
 .list-item-meta {
   font-family: var(--font-mono);
   font-size: 0.8rem;

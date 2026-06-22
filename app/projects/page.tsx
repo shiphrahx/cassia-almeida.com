@@ -9,6 +9,34 @@ function GitHubIcon() {
   );
 }
 
+function ProjectRow({ p, showCaption }: { p: EnrichedProject; showCaption: boolean }) {
+  return (
+    <div className="project-row">
+      <a
+        className="project-row-main"
+        href={p.siteUrl ?? p.url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div className="list-item-title">{p.name}</div>
+        {showCaption && p.caption && <div className="list-item-sub">{p.caption}</div>}
+      </a>
+      <div className="project-row-right">
+        <a
+          className="project-repo"
+          href={p.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${p.name} source on GitHub`}
+        >
+          <GitHubIcon />
+        </a>
+        {p.year && <span className="list-item-meta">{p.year}</span>}
+      </div>
+    </div>
+  );
+}
+
 type EnrichedProject = Project & {
   name: string;
   year: number | null;
@@ -87,13 +115,7 @@ export default async function Projects() {
           <div className="section-header"><span className="section-title">Other Projects</span></div>
           <div className="list">
             {other.map((p) => (
-              <a key={p.url} className="list-item" href={p.url} target="_blank" rel="noopener noreferrer">
-                <div>
-                  <div className="list-item-title">{p.name}</div>
-                  {p.caption && <div className="list-item-sub">{p.caption}</div>}
-                </div>
-                {p.year && <span className="list-item-meta">{p.year}</span>}
-              </a>
+              <ProjectRow key={p.url} p={p} showCaption />
             ))}
           </div>
         </div>
@@ -104,10 +126,7 @@ export default async function Projects() {
           <div className="section-header"><span className="section-title">Archived</span></div>
           <div className="list">
             {archived.map((p) => (
-              <a key={p.url} className="list-item" href={p.url} target="_blank" rel="noopener noreferrer">
-                <span className="list-item-title">{p.name}</span>
-                {p.year && <span className="list-item-meta">{p.year}</span>}
-              </a>
+              <ProjectRow key={p.url} p={p} showCaption={false} />
             ))}
           </div>
         </div>
