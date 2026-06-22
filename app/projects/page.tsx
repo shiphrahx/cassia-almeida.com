@@ -40,19 +40,19 @@ export default function Projects() {
             </div>
             <span className="list-item-meta">2026</span>
           </a>
-          <a className="list-item" href="https://github.com/shiphrahx/Pulse" target="_blank" rel="noopener noreferrer">
-            <div>
-              <div className="list-item-title">Pulse</div>
-              <div className="list-item-sub">A modern one-page portfolio and vCard template built with Vite and React.</div>
-            </div>
-            <span className="list-item-meta">2025</span>
-          </a>
           <a className="list-item" href="https://github.com/shiphrahx/Ashenveld" target="_blank" rel="noopener noreferrer">
             <div>
               <div className="list-item-title">Ashenveld</div>
               <div className="list-item-sub">An experimental text-driven RPG with branching storytelling in a dark fantasy setting.</div>
             </div>
             <span className="list-item-meta">2026</span>
+          </a>
+          <a className="list-item" href="https://github.com/shiphrahx/Pulse" target="_blank" rel="noopener noreferrer">
+            <div>
+              <div className="list-item-title">Pulse</div>
+              <div className="list-item-sub">A modern one-page portfolio and vCard template built with Vite and React.</div>
+            </div>
+            <span className="list-item-meta">2025</span>
           </a>
         </div>
       </div>
