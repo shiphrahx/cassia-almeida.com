@@ -25,35 +25,19 @@ export default function Projects() {
 
       <div className="section">
         <div className="section-header"><span className="section-title">Other Projects</span></div>
-        <div className="card-grid">
-          <a className="card" href="https://github.com/shiphrahx/pixpaws" target="_blank" rel="noopener noreferrer">
-            <div className="card-name">pixpaws</div>
-            <div className="card-desc">A free, client-side pixel art generator for pet photos. Drag, drop, and pixelify using classic gaming palettes.</div>
-            <span className="card-tag">javascript</span>
-          </a>
-          <a className="card" href="https://github.com/shiphrahx/AI-for-engineering-leaders" target="_blank" rel="noopener noreferrer">
-            <div className="card-name">AI-for-engineering-leaders</div>
-            <div className="card-desc">Practical AI playbooks for engineering leaders to improve delivery, decision-making, and team productivity with real workflows, prompts, and systems.</div>
-          </a>
-          <a className="card" href="https://github.com/shiphrahx/Pulse" target="_blank" rel="noopener noreferrer">
-            <div className="card-name">Pulse</div>
-            <div className="card-desc">A modern one-page portfolio and vCard template built with Vite and React — focused on clarity, smooth navigation, and easy customisation.</div>
-            <span className="card-tag">javascript</span>
-          </a>
-          <a className="card" href="https://github.com/shiphrahx/Ashenveld" target="_blank" rel="noopener noreferrer">
-            <div className="card-name">Ashenveld</div>
-            <div className="card-desc">An experimental text-driven RPG exploring branching storytelling, world simulation, and choice-driven gameplay in a dark fantasy setting.</div>
-            <span className="card-tag">typescript</span>
-          </a>
+        <div className="list">
+          <a className="list-item" href="https://github.com/shiphrahx/pixpaws" target="_blank" rel="noopener noreferrer"><span className="list-item-title">pixpaws</span><span className="list-item-meta">javascript</span></a>
+          <a className="list-item" href="https://github.com/shiphrahx/AI-for-engineering-leaders" target="_blank" rel="noopener noreferrer"><span className="list-item-title">AI-for-engineering-leaders</span></a>
+          <a className="list-item" href="https://github.com/shiphrahx/Pulse" target="_blank" rel="noopener noreferrer"><span className="list-item-title">Pulse</span><span className="list-item-meta">javascript</span></a>
+          <a className="list-item" href="https://github.com/shiphrahx/Ashenveld" target="_blank" rel="noopener noreferrer"><span className="list-item-title">Ashenveld</span><span className="list-item-meta">typescript</span></a>
         </div>
       </div>
 
       <div className="section">
         <div className="section-header"><span className="section-title">Archived</span></div>
         <div className="list">
-          <a className="list-item" href="#"><span className="list-item-title">csv-toolkit</span><span className="list-item-meta">2024</span></a>
-          <a className="list-item" href="#"><span className="list-item-title">habit-tracker-cli</span><span className="list-item-meta">2023</span></a>
-          <a className="list-item" href="#"><span className="list-item-title">static-site-starter</span><span className="list-item-meta">2022</span></a>
+          <a className="list-item" href="https://github.com/shiphrahx/VouJuntoCom" target="_blank" rel="noopener noreferrer"><span className="list-item-title">VouJuntoCom</span><span className="list-item-meta">2016</span></a>
+          <a className="list-item" href="https://github.com/shiphrahx/CasaLiberdade.github.io" target="_blank" rel="noopener noreferrer"><span className="list-item-title">CasaLiberdade.github.io</span><span className="list-item-meta">2015</span></a>
         </div>
       </div>
     </>
