@@ -44,6 +44,7 @@ export async function getRepoMeta(url: string): Promise<RepoMeta> {
     const token = process.env.GITHUB_TOKEN;
     const res = await fetch(`https://api.github.com/repos/${parsed.owner}/${parsed.repo}`, {
       cache: "force-cache",
+      signal: AbortSignal.timeout(5000),
       headers: {
         Accept: "application/vnd.github+json",
         ...(token ? { Authorization: `Bearer ${token}` } : {}),
