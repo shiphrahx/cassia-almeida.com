@@ -262,7 +262,7 @@ nav {
 
 .card-tag {
   font-family: var(--font-mono);
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: var(--text-dim);
   background: rgba(255,255,255,0.03);
   padding: 3px 9px;
