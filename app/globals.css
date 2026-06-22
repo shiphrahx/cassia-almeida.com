@@ -182,20 +182,11 @@ nav {
 
 .project-row-right {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 6px;
+  align-items: center;
+  gap: 12px;
   margin-left: 20px;
   white-space: nowrap;
 }
-
-.project-row-meta {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.project-row-right .list-item-meta { margin-left: 0; }
 
 .project-tag {
   font-family: var(--font-mono);

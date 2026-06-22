@@ -22,18 +22,15 @@ function ProjectRow({ p, showCaption }: { p: EnrichedProject; showCaption: boole
         {showCaption && p.caption && <div className="list-item-sub">{p.caption}</div>}
       </a>
       <div className="project-row-right">
-        <div className="project-row-meta">
-          <a
-            className="project-repo"
-            href={p.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`${p.name} source on GitHub`}
-          >
-            <GitHubIcon />
-          </a>
-          {p.year && <span className="list-item-meta">{p.year}</span>}
-        </div>
+        <a
+          className="project-repo"
+          href={p.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${p.name} source on GitHub`}
+        >
+          <GitHubIcon />
+        </a>
         {p.language && <span className="project-tag">{p.language.toLowerCase()}</span>}
       </div>
     </div>
