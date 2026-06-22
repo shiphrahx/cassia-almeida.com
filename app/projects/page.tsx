@@ -8,27 +8,42 @@ export default function Projects() {
       </p>
 
       <div className="section">
-        <div className="section-header"><span className="section-title">Active</span></div>
+        <div className="section-header"><span className="section-title">Starred</span></div>
         <div className="card-grid">
-          <a className="card" href="#">
-            <div className="card-name">markdown-editor</div>
-            <div className="card-desc">A distraction-free writing app with live preview and multi-format export.</div>
+          <a className="card" href="https://github.com/shiphrahx/git-tomato" target="_blank" rel="noopener noreferrer">
+            <div className="card-name">git-tomato</div>
+            <div className="card-desc">Pomodoro timer that logs your git commits per focus session. See exactly what you built, not just how long you worked.</div>
+            <span className="card-tag">javascript</span>
+          </a>
+          <a className="card" href="https://github.com/shiphrahx/Caliber" target="_blank" rel="noopener noreferrer">
+            <div className="card-name">Caliber</div>
+            <div className="card-desc">A lightweight web platform for engineering managers to run their day-to-day in one place — teams, 1:1s, tasks, delivery signals, and personal growth.</div>
             <span className="card-tag">typescript</span>
           </a>
-          <a className="card" href="#">
-            <div className="card-name">palette-gen</div>
-            <div className="card-desc">Generate accessible colour palettes from a single seed colour using OKLCH.</div>
-            <span className="card-tag">svelte</span>
+        </div>
+      </div>
+
+      <div className="section">
+        <div className="section-header"><span className="section-title">Other Projects</span></div>
+        <div className="card-grid">
+          <a className="card" href="https://github.com/shiphrahx/pixpaws" target="_blank" rel="noopener noreferrer">
+            <div className="card-name">pixpaws</div>
+            <div className="card-desc">A free, client-side pixel art generator for pet photos. Drag, drop, and pixelify using classic gaming palettes.</div>
+            <span className="card-tag">javascript</span>
           </a>
-          <a className="card" href="#">
-            <div className="card-name">tiny-invoices</div>
-            <div className="card-desc">Create and send invoices from a YAML file. No accounts, no SaaS.</div>
-            <span className="card-tag">python</span>
+          <a className="card" href="https://github.com/shiphrahx/AI-for-engineering-leaders" target="_blank" rel="noopener noreferrer">
+            <div className="card-name">AI-for-engineering-leaders</div>
+            <div className="card-desc">Practical AI playbooks for engineering leaders to improve delivery, decision-making, and team productivity with real workflows, prompts, and systems.</div>
           </a>
-          <a className="card" href="#">
-            <div className="card-name">link-garden</div>
-            <div className="card-desc">Personal bookmarking with tags, full-text search, and daily digests.</div>
-            <span className="card-tag">go</span>
+          <a className="card" href="https://github.com/shiphrahx/Pulse" target="_blank" rel="noopener noreferrer">
+            <div className="card-name">Pulse</div>
+            <div className="card-desc">A modern one-page portfolio and vCard template built with Vite and React — focused on clarity, smooth navigation, and easy customisation.</div>
+            <span className="card-tag">javascript</span>
+          </a>
+          <a className="card" href="https://github.com/shiphrahx/Ashenveld" target="_blank" rel="noopener noreferrer">
+            <div className="card-name">Ashenveld</div>
+            <div className="card-desc">An experimental text-driven RPG exploring branching storytelling, world simulation, and choice-driven gameplay in a dark fantasy setting.</div>
+            <span className="card-tag">typescript</span>
           </a>
         </div>
       </div>
