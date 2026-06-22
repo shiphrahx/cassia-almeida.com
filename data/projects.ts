@@ -4,6 +4,7 @@ export type Project = {
   url: string; // GitHub repo URL — the name, year and language are pulled from GitHub
   category: ProjectCategory;
   description?: string; // optional caption; falls back to the repo's GitHub description
+  language?: string; // optional override for the tech tag (used verbatim); else GitHub's language
 };
 
 // To add or remove a project, just add or delete a line below.
@@ -32,6 +33,7 @@ const projects: Project[] = [
     category: "other",
     description:
       "Practical AI playbooks for engineering leaders to improve delivery, decisions, and team productivity.",
+    language: "AI",
   },
   {
     url: "https://github.com/shiphrahx/Ashenveld",

@@ -22,7 +22,7 @@ function ProjectRow({ p, showCaption }: { p: EnrichedProject; showCaption: boole
         {showCaption && p.caption && <div className="list-item-sub">{p.caption}</div>}
       </a>
       <div className="project-row-right">
-        {p.language && <span className="project-tag">{p.language.toLowerCase()}</span>}
+        {p.language && <span className="project-tag">{p.language}</span>}
         <a
           className="project-repo"
           href={p.url}
@@ -37,7 +37,7 @@ function ProjectRow({ p, showCaption }: { p: EnrichedProject; showCaption: boole
   );
 }
 
-type EnrichedProject = Project & {
+type EnrichedProject = Omit<Project, "language"> & {
   name: string;
   year: number | null;
   language: string | null;
@@ -57,7 +57,7 @@ export default async function Projects() {
         ...project,
         name: meta.name,
         year: meta.year,
-        language: meta.language,
+        language: project.language ?? (meta.language ? meta.language.toLowerCase() : null),
         createdAt: meta.createdAt,
         caption: project.description ?? meta.description,
         siteUrl: meta.siteUrl,
@@ -93,7 +93,7 @@ export default async function Projects() {
                 </a>
                 {p.caption && <div className="card-desc">{p.caption}</div>}
                 <div className="card-footer">
-                  {p.language && <span className="card-tag">{p.language.toLowerCase()}</span>}
+                  {p.language && <span className="card-tag">{p.language}</span>}
                   <a
                     className="card-repo"
                     href={p.url}
