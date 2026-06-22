@@ -22,6 +22,7 @@ function ProjectRow({ p, showCaption }: { p: EnrichedProject; showCaption: boole
         {showCaption && p.caption && <div className="list-item-sub">{p.caption}</div>}
       </a>
       <div className="project-row-right">
+        {p.language && <span className="project-tag">{p.language.toLowerCase()}</span>}
         <a
           className="project-repo"
           href={p.url}
@@ -31,7 +32,6 @@ function ProjectRow({ p, showCaption }: { p: EnrichedProject; showCaption: boole
         >
           <GitHubIcon />
         </a>
-        {p.language && <span className="project-tag">{p.language.toLowerCase()}</span>}
       </div>
     </div>
   );
