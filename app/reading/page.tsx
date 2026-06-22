@@ -12,7 +12,7 @@ function groupByCategory(books: Book[]): CategoryGroup[] {
 }
 
 export default function Reading() {
-  const groups = groupByCategory(books);
+  const groups = groupByCategory([...books].reverse());
 
   return (
     <>
