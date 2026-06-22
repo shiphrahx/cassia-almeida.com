@@ -45,6 +45,7 @@ const projects: Project[] = [
     description:
       "A modern one-page portfolio and vCard template built with Vite and React.",
   },
+  { url: "https://github.com/shiphrahx/mdsite", category: "other" },
   { url: "https://github.com/shiphrahx/VouJuntoCom", category: "archived" },
   { url: "https://github.com/shiphrahx/CasaLiberdade.github.io", category: "archived" },
 ];
