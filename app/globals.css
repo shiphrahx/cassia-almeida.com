@@ -178,6 +178,7 @@ nav {
 }
 
 .card {
+  position: relative;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -185,11 +186,33 @@ nav {
   transition: all 0.18s;
   display: flex;
   flex-direction: column;
-  cursor: pointer;
 }
 
 .card:hover { border-color: #26233a; transform: translateY(-1px); }
 .card-name { font-size: 1rem; font-weight: 500; color: var(--text); margin-bottom: 8px; }
+
+/* Stretched link: the whole card navigates to the live site… */
+.card-link { color: var(--text); }
+.card-link::after { content: ""; position: absolute; inset: 0; z-index: 0; }
+
+/* …while the GitHub icon sits above the overlay and links to the repo. */
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.card-repo {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  color: var(--text-dim);
+  transition: color 0.12s;
+}
+
+.card-repo:hover { color: var(--text); }
 .card-desc { font-size: 1rem; color: var(--text-dim); line-height: 1.5; flex: 1; margin-bottom: 14px; }
 
 .card-tag {
