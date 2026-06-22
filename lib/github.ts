@@ -4,12 +4,21 @@ export type RepoMeta = {
   year: number | null;
   language: string | null;
   description: string | null;
+  /** Live site to link to: the repo's homepage, else its GitHub Pages URL, else null. */
+  siteUrl: string | null;
 };
 
 function parseRepo(url: string): { owner: string; repo: string } | null {
   const match = url.match(/github\.com\/([^/]+)\/([^/?#]+)/);
   if (!match) return null;
   return { owner: match[1], repo: match[2].replace(/\.git$/, "") };
+}
+
+/** Constructs the GitHub Pages URL for a repo (user-site vs project-site). */
+function buildPagesUrl(owner: string, repo: string): string {
+  const lowerOwner = owner.toLowerCase();
+  if (repo.toLowerCase() === `${lowerOwner}.github.io`) return `https://${lowerOwner}.github.io/`;
+  return `https://${lowerOwner}.github.io/${repo}/`;
 }
 
 /**
@@ -21,9 +30,15 @@ function parseRepo(url: string): { owner: string; repo: string } | null {
 export async function getRepoMeta(url: string): Promise<RepoMeta> {
   const parsed = parseRepo(url);
   const fallbackName = parsed?.repo ?? url;
-  if (!parsed) {
-    return { name: fallbackName, createdAt: null, year: null, language: null, description: null };
-  }
+  const empty: RepoMeta = {
+    name: fallbackName,
+    createdAt: null,
+    year: null,
+    language: null,
+    description: null,
+    siteUrl: null,
+  };
+  if (!parsed) return empty;
 
   try {
     const res = await fetch(`https://api.github.com/repos/${parsed.owner}/${parsed.repo}`, {
@@ -32,14 +47,17 @@ export async function getRepoMeta(url: string): Promise<RepoMeta> {
     });
     if (!res.ok) throw new Error(`GitHub responded ${res.status}`);
     const data = await res.json();
+    const homepage = typeof data.homepage === "string" ? data.homepage.trim() : "";
+    const siteUrl = homepage || (data.has_pages ? buildPagesUrl(parsed.owner, parsed.repo) : null);
     return {
       name: data.name ?? fallbackName,
       createdAt: data.created_at ?? null,
       year: data.created_at ? new Date(data.created_at).getFullYear() : null,
       language: data.language ?? null,
       description: data.description ?? null,
+      siteUrl,
     };
   } catch {
-    return { name: fallbackName, createdAt: null, year: null, language: null, description: null };
+    return empty;
   }
 }
