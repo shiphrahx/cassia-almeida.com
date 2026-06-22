@@ -34,7 +34,32 @@
       "PowerShell(git add components/Footer.tsx app/globals.css)",
       "PowerShell(git commit -m \"Replace footer text links with brand logos, add Notion\")",
       "PowerShell(git add -A)",
-      "PowerShell(git commit -m \"Style about-page links distinctly and turn product list into bulleted list\")"
+      "PowerShell(git commit -m \"Style about-page links distinctly and turn product list into bulleted list\")",
+      "Bash(ls memory *)",
+      "Bash(cat MEMORY.md)",
+      "Bash(git reset *)",
+      "Bash(git rev-list *)",
+      "Bash(git pull *)",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('.claude/settings.local.json','utf8'\\)\\); console.log\\('valid JSON'\\)\")",
+      "Bash(git restore *)",
+      "Bash(grep -qE \"Ready in|started server|Local:\" /tmp/devserver.log)",
+      "Read(//private/tmp/**)",
+      "Bash(grep -qE \"Ready in|Local:\" /tmp/devserver.log)",
+      "Bash(break)",
+      "Bash(curl -s -o /tmp/projects.html -w \"%{http_code}\\\\n\" http://localhost:3000/projects)",
+      "Read(//tmp/**)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/projects)",
+      "Bash(curl -s --max-time 30 -o /tmp/proj3001.html -w \"%{http_code}\\\\n\" http://localhost:3001/projects)",
+      "Bash(lsof -ti tcp:3000)",
+      "Bash(lsof -ti tcp:3001)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(curl -s --max-time 30 -o /dev/null -w \"status=%{http_code} time=%{time_total}s\\\\n\" http://localhost:3000/projects)",
+      "Bash(grep -rho '\\\\.project-row[^{,]*{[^}]*display:[^;]*' .next/static/)",
+      "Bash(gh auth *)",
+      "Bash(curl -s -H \"Authorization: Bearer $\\(gh auth token\\)\" https://api.github.com/repos/shiphrahx/mdsite)",
+      "Bash(node -e 'let d=\"\";process.stdin.on\\(\"data\",c=>d+=c\\).on\\(\"end\",\\(\\)=>{const j=JSON.parse\\(d\\);console.log\\(JSON.stringify\\({name:j.name,desc:j.description,lang:j.language,created:j.created_at,has_pages:j.has_pages,homepage:j.homepage},null,0\\)\\)}\\)')",
+      "Bash(curl -s -H \"Authorization: Bearer $\\(gh auth token\\)\" https://api.github.com/repos/shiphrahx/notekeeper)",
+      "Bash(node -e 'let d=\"\";process.stdin.on\\(\"data\",c=>d+=c\\).on\\(\"end\",\\(\\)=>{const j=JSON.parse\\(d\\);console.log\\(JSON.stringify\\({name:j.name,desc:j.description,lang:j.language,created:j.created_at,has_pages:j.has_pages,homepage:j.homepage}\\)\\)}\\)')"
     ]
   }
 }
