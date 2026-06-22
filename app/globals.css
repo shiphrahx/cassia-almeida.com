@@ -499,6 +499,24 @@ nav {
 .book-title { font-size: 1rem; color: var(--text); }
 .book-author { font-size: 1rem; color: var(--text-dim); margin-top: 1px; }
 
+/* â”€â”€ Good â”€â”€ */
+.good {
+  max-width: 620px;
+  padding: 96px 0 96px;
+}
+
+.good p {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--text-secondary);
+  margin-bottom: 1.5em;
+}
+
+.good p:last-child {
+  color: var(--text-dim);
+  margin-top: 0.5em;
+}
+
 /* â”€â”€ Home constellation backdrop â”€â”€ */
 .parallax-backdrop {
   position: fixed;
