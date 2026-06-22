@@ -182,13 +182,29 @@ nav {
 
 .project-row-right {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
   margin-left: 20px;
   white-space: nowrap;
 }
 
+.project-row-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .project-row-right .list-item-meta { margin-left: 0; }
+
+.project-tag {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
 
 .project-repo {
   position: relative;
