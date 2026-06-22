@@ -1,68 +1,41 @@
+import books, { type Book } from "@/data/books";
+
+type CategoryGroup = { category: string; books: Book[] };
+
+function groupByCategory(books: Book[]): CategoryGroup[] {
+  const map = new Map<string, Book[]>();
+  for (const book of books) {
+    if (!map.has(book.category)) map.set(book.category, []);
+    map.get(book.category)!.push(book);
+  }
+  return Array.from(map.entries()).map(([category, books]) => ({ category, books }));
+}
+
 export default function Reading() {
+  const groups = groupByCategory(books);
+
   return (
     <>
       <h1 className="page-title">Reading</h1>
       <p className="page-subtitle">
-        Books I&apos;ve read, by year. A mix of tech, leadership, fiction, and everything in between.
+        Books I&apos;ve read, by category. A mix of tech, leadership, and everything in between.
       </p>
 
-      <div className="reading-year">
-        <div className="reading-year-title">2026</div>
-        <div className="list">
-          <div className="book-item">
-            <div><div className="book-title">Designing Data-Intensive Applications</div><div className="book-author">Martin Kleppmann</div></div>
-            <span className="book-rating">★★★★★</span>
-          </div>
-          <div className="book-item">
-            <div><div className="book-title">The Staff Engineer&apos;s Path</div><div className="book-author">Tanya Reilly</div></div>
-            <span className="book-rating">★★★★★</span>
-          </div>
-          <div className="book-item">
-            <div><div className="book-title">An Elegant Puzzle</div><div className="book-author">Will Larson</div></div>
-            <span className="book-rating">★★★★☆</span>
+      {groups.map(({ category, books: groupBooks }) => (
+        <div key={category} className="reading-group">
+          <div className="reading-group-title">{category}</div>
+          <div className="list">
+            {groupBooks.map((book) => (
+              <div key={book.title} className="book-item">
+                <div>
+                  <div className="book-title">{book.title}</div>
+                  <div className="book-author">{book.author}</div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-
-      <div className="reading-year">
-        <div className="reading-year-title">2025</div>
-        <div className="list">
-          <div className="book-item">
-            <div><div className="book-title">The Pragmatic Programmer</div><div className="book-author">David Thomas, Andrew Hunt</div></div>
-            <span className="book-rating">★★★★★</span>
-          </div>
-          <div className="book-item">
-            <div><div className="book-title">Thinking in Systems</div><div className="book-author">Donella Meadows</div></div>
-            <span className="book-rating">★★★★★</span>
-          </div>
-          <div className="book-item">
-            <div><div className="book-title">The Making of a Manager</div><div className="book-author">Julie Zhuo</div></div>
-            <span className="book-rating">★★★★☆</span>
-          </div>
-          <div className="book-item">
-            <div><div className="book-title">Project Hail Mary</div><div className="book-author">Andy Weir</div></div>
-            <span className="book-rating">★★★★★</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="reading-year">
-        <div className="reading-year-title">2024</div>
-        <div className="list">
-          <div className="book-item">
-            <div><div className="book-title">Accelerate</div><div className="book-author">Nicole Forsgren, Jez Humble, Gene Kim</div></div>
-            <span className="book-rating">★★★★★</span>
-          </div>
-          <div className="book-item">
-            <div><div className="book-title">Team Topologies</div><div className="book-author">Matthew Skelton, Manuel Pais</div></div>
-            <span className="book-rating">★★★★☆</span>
-          </div>
-          <div className="book-item">
-            <div><div className="book-title">A Gentleman in Moscow</div><div className="book-author">Amor Towles</div></div>
-            <span className="book-rating">★★★★★</span>
-          </div>
-        </div>
-      </div>
+      ))}
     </>
   );
 }

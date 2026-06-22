@@ -473,7 +473,7 @@ nav {
 }
 
 /* â”€â”€ Reading â”€â”€ */
-.reading-year-title {
+.reading-group-title {
   font-size: 1rem;
   font-weight: 500;
   color: var(--text-secondary);
@@ -484,7 +484,7 @@ nav {
   border-bottom: 1px solid var(--border);
 }
 
-.reading-year { margin-bottom: 40px; }
+.reading-group { margin-bottom: 40px; }
 
 .book-item {
   display: flex;
@@ -498,14 +498,6 @@ nav {
 .book-item:hover { background: var(--bg-raised); }
 .book-title { font-size: 1rem; color: var(--text); }
 .book-author { font-size: 1rem; color: var(--text-dim); margin-top: 1px; }
-
-.book-rating {
-  font-family: var(--font-mono);
-  font-size: 1rem;
-  color: var(--text-dim);
-  white-space: nowrap;
-  margin-left: 20px;
-}
 
 /* â”€â”€ Home constellation backdrop â”€â”€ */
 .parallax-backdrop {
