@@ -11,6 +11,12 @@ export type Project = {
 // The creation year is extracted automatically from the GitHub repo.
 const projects: Project[] = [
   {
+    url: "https://github.com/shiphrahx/works-on-my-machine",
+    category: "other",
+    description:
+      "Generates professional explanations for unprofessional situations. It works on my machine — your machine is not my problem.",
+  },
+  {
     url: "https://github.com/shiphrahx/git-tomato",
     category: "starred",
     description:
