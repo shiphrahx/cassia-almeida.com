@@ -14,7 +14,7 @@ const projects: Project[] = [
     url: "https://github.com/shiphrahx/works-on-my-machine",
     category: "other",
     description:
-      "Generates professional explanations for unprofessional situations. It works on my machine — your machine is not my problem.",
+      "Generates professional explanations for unprofessional situations. It works on my machine. Your machine is not my problem.",
   },
   {
     url: "https://github.com/shiphrahx/git-tomato",
