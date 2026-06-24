@@ -15,6 +15,7 @@ const projects: Project[] = [
     category: "other",
     description:
       "Analyse your calendar and messaging activity to generate a daily productivity and focus-time report.",
+    language: "React",
   },
   {
     url: "https://github.com/shiphrahx/works-on-my-machine",
@@ -27,6 +28,7 @@ const projects: Project[] = [
     category: "starred",
     description:
       "Pomodoro timer that logs your git commits per focus session. See exactly what you built, not just how long you worked.",
+    language: "Electron",
   },
   {
     url: "https://github.com/shiphrahx/Caliber",
@@ -39,6 +41,7 @@ const projects: Project[] = [
     category: "other",
     description:
       "A free, client-side pixel art generator for pet photos using classic gaming palettes.",
+    language: "React",
   },
   {
     url: "https://github.com/shiphrahx/AI-for-engineering-leaders",
@@ -58,6 +61,7 @@ const projects: Project[] = [
     category: "other",
     description:
       "A modern one-page portfolio and vCard template built with Vite and React.",
+    language: "React",
   },
   { url: "https://github.com/shiphrahx/notekeeper", category: "other" },
   { url: "https://github.com/shiphrahx/mdsite", category: "other" },
