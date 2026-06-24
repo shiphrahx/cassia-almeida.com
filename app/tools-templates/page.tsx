@@ -1,84 +1,55 @@
+import templates from "@/data/templates";
+
+function NotionIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+      <path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466l1.823 1.447zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952l1.448.327s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854l-1.167-.094c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.14c-.093-.514.28-.887.747-.933l3.222-.186z" />
+    </svg>
+  );
+}
+
 export default function ToolsTemplates() {
   return (
     <>
       <h1 className="page-title">Tools &amp; Templates</h1>
       <p className="page-subtitle">
-        Small utilities I built for myself and starter kits I&apos;ve put together. Free to use, fork, and modify.
+        Notion templates I&apos;ve built and published on my{" "}
+        <a href="https://www.notion.com/@shiphrah" target="_blank" rel="noopener noreferrer">
+          creator profile
+        </a>
+        . All free to duplicate and make your own.
       </p>
-
-      <div className="section">
-        <div className="section-header">
-          <span className="section-title">Tools</span>
-        </div>
-        <div className="compact-grid">
-          <a className="compact-item" href="#">
-            <span className="compact-icon">🎨</span>
-            <div className="compact-name">Colour Picker</div>
-            <div className="compact-meta">OKLCH + hex</div>
-          </a>
-          <a className="compact-item" href="#">
-            <span className="compact-icon">⏱</span>
-            <div className="compact-name">Pomodoro</div>
-            <div className="compact-meta">25 / 5 timer</div>
-          </a>
-          <a className="compact-item" href="#">
-            <span className="compact-icon">🔗</span>
-            <div className="compact-name">OG Previewer</div>
-            <div className="compact-meta">meta tags</div>
-          </a>
-          <a className="compact-item" href="#">
-            <span className="compact-icon">🔤</span>
-            <div className="compact-name">Font Tester</div>
-            <div className="compact-meta">variable fonts</div>
-          </a>
-          <a className="compact-item" href="#">
-            <span className="compact-icon">📐</span>
-            <div className="compact-name">Spacing Scale</div>
-            <div className="compact-meta">rem calculator</div>
-          </a>
-          <a className="compact-item" href="#">
-            <span className="compact-icon">🌗</span>
-            <div className="compact-name">Contrast Check</div>
-            <div className="compact-meta">WCAG 2.1</div>
-          </a>
-        </div>
-      </div>
 
       <div className="section">
         <div className="section-header">
           <span className="section-title">Templates</span>
         </div>
-        <div className="compact-grid">
-          <a className="compact-item" href="#">
-            <span className="compact-icon">📄</span>
-            <div className="compact-name">Blog Starter</div>
-            <div className="compact-meta">HTML + CSS</div>
-          </a>
-          <a className="compact-item" href="#">
-            <span className="compact-icon">📊</span>
-            <div className="compact-name">Dashboard</div>
-            <div className="compact-meta">React + Tailwind</div>
-          </a>
-          <a className="compact-item" href="#">
-            <span className="compact-icon">📮</span>
-            <div className="compact-name">Email Template</div>
-            <div className="compact-meta">MJML</div>
-          </a>
-          <a className="compact-item" href="#">
-            <span className="compact-icon">🧾</span>
-            <div className="compact-name">Invoice PDF</div>
-            <div className="compact-meta">LaTeX</div>
-          </a>
-          <a className="compact-item" href="#">
-            <span className="compact-icon">📝</span>
-            <div className="compact-name">Landing Page</div>
-            <div className="compact-meta">Astro</div>
-          </a>
-          <a className="compact-item" href="#">
-            <span className="compact-icon">📦</span>
-            <div className="compact-name">CLI Scaffold</div>
-            <div className="compact-meta">Go</div>
-          </a>
+        <div className="card-grid">
+          {templates.map((t) => (
+            <div key={t.url} className="card">
+              <a
+                className="card-name card-link"
+                href={t.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t.name}
+              </a>
+              <div className="card-desc">{t.description}</div>
+              <div className="card-footer">
+                <span className="card-tag">{t.price}</span>
+                <a
+                  className="card-repo"
+                  href={t.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${t.name} on Notion`}
+                >
+                  <NotionIcon />
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </>
