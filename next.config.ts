@@ -1,10 +1,11 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
-const nextConfig = {
+const isGithubPages = process.env.GITHUB_PAGES === 'true';
+
+const nextConfig: NextConfig = {
   output: 'export',
-  basePath: '/cassia-almeida.com',
+  basePath: isGithubPages ? '/cassia-almeida.com' : '',
   images: { unoptimized: true },
 };
-module.exports = nextConfig;
 
 export default nextConfig;
