@@ -23,7 +23,10 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      - run: npm install --no-audit --no-fund
+      # The committed lockfile is generated on macOS and omits Linux-only
+      # native binaries (lightningcss, swc, unrs-resolver). Remove it so the
+      # runner resolves the correct linux-x64 optional deps from scratch.
+      - run: rm -f package-lock.json && npm install --no-audit --no-fund
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
