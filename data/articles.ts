@@ -5,6 +5,7 @@ export type Article = {
 };
 
 const articles: Article[] = [
+  { title: "Build to Learn, Then Build to Last", url: "https://medium.com/@shiphrah_/build-to-learn-then-build-to-last-e9efc24a2134", date: "2026-06-24" },
   { title: "AI Won't Kill Engineering. Weak Leadership will.", url: "https://medium.com/@shiphrah_/ai-wont-kill-engineering-weak-leadership-will-c280fb335051", date: "2026-05-17" },
   { title: "If Every Decision Goes Through You, That's the Problem", url: "https://medium.com/@shiphrah_/if-every-decision-goes-through-you-thats-the-problem-c441ba09d0ee", date: "2026-05-06" },
   { title: "I Built a Free Prompt Library for Engineering Leaders", url: "https://medium.com/@shiphrah_/i-built-a-free-prompt-library-for-engineering-leaders-0dcbf5a3c23d", date: "2026-04-29" },
