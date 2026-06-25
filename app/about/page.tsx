@@ -120,7 +120,7 @@ export default function About() {
                 <span className="timeline-role">
                   Manager, Software Engineering
                 </span>
-                <span className="timeline-dates">Jan 2017 – Jan 2022</span>
+                <span className="timeline-dates">Jan 2022 – Aug 2023</span>
               </div>
               <div className="timeline-company">Unity · Dublin, Ireland</div>
               <div className="timeline-desc">
@@ -151,7 +151,7 @@ export default function About() {
                 <span className="timeline-role">
                   Team Manager &amp; Principal Software Engineer
                 </span>
-                <span className="timeline-dates">May 2014 – Oct 2016</span>
+                <span className="timeline-dates">Jan 2017 – Jan 2022</span>
               </div>
               <div className="timeline-company">
                 Blue Insurance · Dublin, Ireland
