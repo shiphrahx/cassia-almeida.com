@@ -669,4 +669,5 @@ footer {
   .timeline-item { grid-template-columns: 1fr; gap: 8px; }
   .timeline-left { align-items: flex-start; }
   footer { flex-direction: column; gap: 12px; align-items: flex-start; }
+  .home-text .page-subtitle { white-space: normal; }
 }
