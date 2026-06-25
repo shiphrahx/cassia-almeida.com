@@ -59,7 +59,14 @@
       "Bash(curl -s -H \"Authorization: Bearer $\\(gh auth token\\)\" https://api.github.com/repos/shiphrahx/mdsite)",
       "Bash(node -e 'let d=\"\";process.stdin.on\\(\"data\",c=>d+=c\\).on\\(\"end\",\\(\\)=>{const j=JSON.parse\\(d\\);console.log\\(JSON.stringify\\({name:j.name,desc:j.description,lang:j.language,created:j.created_at,has_pages:j.has_pages,homepage:j.homepage},null,0\\)\\)}\\)')",
       "Bash(curl -s -H \"Authorization: Bearer $\\(gh auth token\\)\" https://api.github.com/repos/shiphrahx/notekeeper)",
-      "Bash(node -e 'let d=\"\";process.stdin.on\\(\"data\",c=>d+=c\\).on\\(\"end\",\\(\\)=>{const j=JSON.parse\\(d\\);console.log\\(JSON.stringify\\({name:j.name,desc:j.description,lang:j.language,created:j.created_at,has_pages:j.has_pages,homepage:j.homepage}\\)\\)}\\)')"
+      "Bash(node -e 'let d=\"\";process.stdin.on\\(\"data\",c=>d+=c\\).on\\(\"end\",\\(\\)=>{const j=JSON.parse\\(d\\);console.log\\(JSON.stringify\\({name:j.name,desc:j.description,lang:j.language,created:j.created_at,has_pages:j.has_pages,homepage:j.homepage}\\)\\)}\\)')",
+      "PowerShell(Get-Process node -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-CimInstance Win32_Process -Filter \"Name='node.exe'\")",
+      "PowerShell(Stop-Process -Id 16888,23820,28072,26812,25284 -Force -ErrorAction SilentlyContinue)",
+      "PowerShell(\"cleared\")",
+      "PowerShell($env:NO_COLOR=1; Start-Process npm -ArgumentList 'run','dev' -WorkingDirectory \"C:\\\\Users\\\\Shiph\\\\Documents\\\\Code\\\\cassia-almeida.com\" -WindowStyle Hidden; \"started\")",
+      "PowerShell(Start-Sleep -Seconds 6; Get-Process node -ErrorAction SilentlyContinue | Measure-Object | Select-Object -ExpandProperty Count; Get-NetTCPConnection -State Listen -ErrorAction SilentlyContinue | Where-Object { $_.LocalPort -ge 3000 -and $_.LocalPort -le 3010 } | Select-Object LocalPort | Format-List)",
+      "PowerShell(cd \"C:\\\\Users\\\\Shiph\\\\Documents\\\\Code\\\\cassia-almeida.com\"; $env:NO_COLOR=1; npm run dev 2>&1 | Select-Object -First 25)"
     ]
   }
 }
