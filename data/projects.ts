@@ -12,7 +12,7 @@ export type Project = {
 const projects: Project[] = [
   {
     url: "https://github.com/shiphrahx/watermelon",
-    category: "other",
+    category: "archived",
     description:
       "Analyse your calendar and messaging activity to generate a daily productivity and focus-time report.",
     language: "React",
