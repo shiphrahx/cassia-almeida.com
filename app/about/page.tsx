@@ -23,16 +23,16 @@ export default function About() {
         <div>
           <div className="about-name">Hiya</div>
           <p className="about-role">
-            I'm Cássia.{" "}
+            I’m Cássia.{" "}
             <strong>Engineering leader, builder, and creator</strong>.
             <br />
             At hyperexponential, I help teams deliver AI-driven platforms for
-            some of the world's most complex industries.
+            some of the world’s most complex industries.
             <br />
             <br />
             Outside of work,{" "}
             <strong>
-              I'm passionate about creating content and sharing it online.
+              I’m passionate about creating content and sharing it online.
             </strong>
             <br />
             <br />
