@@ -42,6 +42,7 @@ const stanzas: string[][] = [
 export default function Good() {
   return (
     <div className="good">
+      <h1 className="sr-only">Good</h1>
       {stanzas.map((stanza, i) => (
         <div className="good-stanza" key={i}>
           {stanza.map((line, j) => (

@@ -32,7 +32,7 @@ export default function Reading() {
           <div className="reading-group-title">{category}</div>
           <div className="list">
             {groupBooks.map((book) => (
-              <div key={book.title} className="book-item">
+              <div key={`${book.title}—${book.author}`} className="book-item">
                 <div>
                   <div className="book-title">{book.title}</div>
                   <div className="book-author">{book.author}</div>
