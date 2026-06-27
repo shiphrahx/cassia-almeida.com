@@ -21,6 +21,8 @@ export default function Astronaut() {
     const sprite = spriteRef.current;
     if (!sprite) return;
 
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     const ACCEL = 0.5;
     const FRICTION = 0.9;
     const MAX = 8;
@@ -44,6 +46,7 @@ export default function Astronaut() {
       if (held[k]) return; // ignore auto-repeat
       held[k] = true;
       setActive((p) => ({ ...p, [k]: true }));
+      start(); // wake the loop if it parked while idle
     };
     const onUp = (e: KeyboardEvent) => {
       const k = e.key.toLowerCase();
@@ -53,6 +56,8 @@ export default function Astronaut() {
     };
 
     let frame = 0;
+    let running = false;
+
     const render = () => {
       const maxX = window.innerWidth - W;
       const maxY = window.innerHeight - H;
@@ -76,25 +81,45 @@ export default function Astronaut() {
 
       const thrusting = held.w || held.s || held.a || held.d;
 
-      // idle bob handled here (not CSS) so it never fights this transform
+      // idle bob/tilt are motion flourishes; disable them for reduced-motion users
       bobT += 0.04;
-      const bob = thrusting ? 0 : Math.sin(bobT) * 4;
-      const tilt = vx * 1.4;
+      const bob = reduced || thrusting ? 0 : Math.sin(bobT) * 4;
+      const tilt = reduced ? 0 : vx * 1.4;
 
       sprite.style.transform = `translate3d(${x}px, ${y + bob}px, 0) rotate(${tilt}deg)`;
       sprite.style.setProperty("--face", String(facing));
       sprite.dataset.thrust = thrusting ? "1" : "0";
 
+      // With reduced motion there is no idle bob to animate, so park the loop
+      // once movement settles and let a keypress wake it again.
+      const idle = !thrusting && Math.abs(vx) < 0.05 && Math.abs(vy) < 0.05;
+      if (reduced && idle) {
+        running = false;
+        return;
+      }
       frame = requestAnimationFrame(render);
     };
 
+    function start() {
+      if (running || document.hidden) return;
+      running = true;
+      frame = requestAnimationFrame(render);
+    }
+    function stop() {
+      running = false;
+      cancelAnimationFrame(frame);
+    }
+    const onVisibility = () => (document.hidden ? stop() : start());
+
     window.addEventListener("keydown", onDown);
     window.addEventListener("keyup", onUp);
-    frame = requestAnimationFrame(render);
+    document.addEventListener("visibilitychange", onVisibility);
+    start();
 
     return () => {
       window.removeEventListener("keydown", onDown);
       window.removeEventListener("keyup", onUp);
+      document.removeEventListener("visibilitychange", onVisibility);
       cancelAnimationFrame(frame);
     };
   }, []);
