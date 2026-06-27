@@ -27,7 +27,7 @@ export default function Astronaut() {
     const FRICTION = 0.9;
     const MAX = 8;
 
-    // rest position: under the subtitle (anchor element in page.tsx)
+    // rest position: right of the text, vertically centered (anchor in page.tsx)
     const anchor = document.getElementById("astronaut-rest")?.getBoundingClientRect();
     let x = anchor ? anchor.left : window.innerWidth / 2 - W / 2;
     let y = anchor ? anchor.top - H / 2 : window.innerHeight / 2;
@@ -35,6 +35,12 @@ export default function Astronaut() {
     let vy = 0;
     let facing = 1;
     let bobT = 0;
+
+    // place at the rest position immediately and reveal, so it never flashes
+    // at the CSS default (top-left) before the animation loop's first frame
+    sprite.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+    sprite.style.setProperty("--face", String(facing));
+    sprite.style.opacity = "1";
 
     const held: Record<Key, boolean> = { w: false, a: false, s: false, d: false };
     const isKey = (k: string): k is Key => (KEYS as readonly string[]).includes(k);
