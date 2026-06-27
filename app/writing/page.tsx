@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import ArticleList from "@/components/ArticleList";
 import articles from "@/data/articles";
+
+export const metadata: Metadata = {
+  title: "Writing",
+  description:
+    "Essays on engineering, leadership, and the craft of building software.",
+};
 
 export default function Writing() {
   return (

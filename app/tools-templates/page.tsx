@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import templates from "@/data/templates";
+
+export const metadata: Metadata = {
+  title: "Tools & Templates",
+  description: "Free Notion templates I've built and published.",
+};
 
 function NotionIcon() {
   return (

@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import books, { type Book } from "@/data/books";
+
+export const metadata: Metadata = {
+  title: "Reading",
+  description: "Books I've read, by category — tech, leadership, and beyond.",
+};
 
 type CategoryGroup = { category: string; books: Book[] };
 

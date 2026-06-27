@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Good",
+  description: "Jocko Willink — \"Good\". When things go bad, find the good.",
+};
+
 const stanzas: string[][] = [
   [
     `One of my direct subordinates — one of my guys that worked for me — he would call me up, or pull me aside, with some major problem. Some issue that was going on. And he'd say: "Boss, we got this and the other thing."`,

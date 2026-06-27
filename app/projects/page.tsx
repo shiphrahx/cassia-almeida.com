@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import projects, { type Project } from "@/data/projects";
 import { getRepoMeta } from "@/lib/github";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "Things I've built on the side. Building in public.",
+};
 
 function GitHubIcon() {
   return (

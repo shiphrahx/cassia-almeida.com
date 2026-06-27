@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import ImgWithFallback from "@/components/ImgWithFallback";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Cássia Almeida — engineering leader, builder, and creator. Career across gaming, finance, and tech.",
+};
 
 export default function About() {
   return (
