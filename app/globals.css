@@ -501,6 +501,18 @@ nav {
 .book-author { font-size: 1rem; color: var(--text-dim); margin-top: 1px; }
 
 /* â”€â”€ Good â”€â”€ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .good {
   max-width: 640px;
   padding: 72px 0 96px;
@@ -543,8 +555,7 @@ main:has(.home-content) {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  padding-top: 20vh;
+  justify-content: center;
 }
 
 .home-text { position: relative; }
@@ -572,6 +583,8 @@ main:has(.home-content) {
   pointer-events: none;
   will-change: transform;
   --face: 1;
+  /* hidden until JS places it at the rest position, to avoid a top-left flash */
+  opacity: 0;
 }
 
 .astronaut-inner {

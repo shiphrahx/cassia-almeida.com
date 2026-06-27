@@ -1,9 +1,4 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
 import type { Article } from "@/data/articles";
-
-const PAGE_SIZE = 8;
 
 type YearGroup = { year: number; articles: Article[] };
 
@@ -25,28 +20,7 @@ function formatDate(iso: string) {
 }
 
 export default function ArticleList({ articles }: { articles: Article[] }) {
-  const [visible, setVisible] = useState(PAGE_SIZE);
-  const sentinelRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const sentinel = sentinelRef.current;
-    if (!sentinel) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setVisible((v) => Math.min(v + PAGE_SIZE, articles.length));
-        }
-      },
-      { rootMargin: "200px" }
-    );
-
-    observer.observe(sentinel);
-    return () => observer.disconnect();
-  }, [articles.length]);
-
-  const sliced = articles.slice(0, visible);
-  const groups = groupByYear(sliced);
+  const groups = groupByYear(articles);
 
   return (
     <>
@@ -71,9 +45,6 @@ export default function ArticleList({ articles }: { articles: Article[] }) {
           </div>
         </div>
       ))}
-      {visible < articles.length && (
-        <div ref={sentinelRef} style={{ height: 1 }} />
-      )}
     </>
   );
 }

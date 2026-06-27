@@ -17,9 +17,31 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["300", "400", "500"],
 });
 
+const SITE_URL = "https://cassia-almeida.com";
+const DESCRIPTION = "Engineering leader. Builder. Writer.";
+
 export const metadata: Metadata = {
-  title: "Cássia Almeida",
-  description: "Engineering leader. Builder. Writer.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Cássia Almeida",
+    template: "%s · Cássia Almeida",
+  },
+  description: DESCRIPTION,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: "Cássia Almeida",
+    title: "Cássia Almeida",
+    description: DESCRIPTION,
+    url: SITE_URL,
+    images: [{ url: "/logos/avatar.jpg", width: 400, height: 400, alt: "Cássia Almeida" }],
+  },
+  twitter: {
+    card: "summary",
+    title: "Cássia Almeida",
+    description: DESCRIPTION,
+    images: ["/logos/avatar.jpg"],
+  },
 };
 
 export default function RootLayout({

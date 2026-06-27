@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import ImgWithFallback from "@/components/ImgWithFallback";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Cássia Almeida — engineering leader, builder, and creator. Career across gaming, finance, and tech.",
+};
 
 export default function About() {
   return (
@@ -9,21 +16,23 @@ export default function About() {
             src="/logos/avatar.jpg"
             alt="Cássia Almeida"
             fallback="CA"
+            width={400}
+            height={400}
           />
         </div>
         <div>
           <div className="about-name">Hiya</div>
           <p className="about-role">
-            I'm Cássia.{" "}
+            I’m Cássia.{" "}
             <strong>Engineering leader, builder, and creator</strong>.
             <br />
             At hyperexponential, I help teams deliver AI-driven platforms for
-            some of the world's most complex industries.
+            some of the world’s most complex industries.
             <br />
             <br />
             Outside of work,{" "}
             <strong>
-              I'm passionate about creating content and sharing it online.
+              I’m passionate about creating content and sharing it online.
             </strong>
             <br />
             <br />
