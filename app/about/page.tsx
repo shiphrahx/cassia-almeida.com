@@ -16,6 +16,8 @@ export default function About() {
             src="/logos/avatar.jpg"
             alt="Cássia Almeida"
             fallback="CA"
+            width={400}
+            height={400}
           />
         </div>
         <div>
