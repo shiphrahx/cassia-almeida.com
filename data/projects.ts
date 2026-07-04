@@ -24,6 +24,13 @@ const projects: Project[] = [
       "Generates professional explanations for unprofessional situations. It works on my machine. Your machine is not my problem.",
   },
   {
+    url: "https://github.com/shiphrahx/scoop",
+    category: "other",
+    description:
+      "A mobile-first weight-loss coach. Instead of searching foods, Scoop tells you the portion to eat to hit your macros.",
+    language: "Next.js",
+  },
+  {
     url: "https://github.com/shiphrahx/git-tomato",
     category: "starred",
     description:
