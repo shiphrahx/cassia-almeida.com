@@ -25,7 +25,7 @@ const projects: Project[] = [
   },
   {
     url: "https://github.com/shiphrahx/scoop",
-    category: "other",
+    category: "starred",
     description:
       "A mobile-first weight-loss coach. Instead of searching foods, Scoop tells you the portion to eat to hit your macros.",
     language: "Next.js",
