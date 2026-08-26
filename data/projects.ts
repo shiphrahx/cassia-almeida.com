@@ -31,6 +31,13 @@ const projects: Project[] = [
     language: "Next.js",
   },
   {
+    url: "https://github.com/shiphrahx/MarkPad",
+    category: "starred",
+    description:
+      "A Markdown editor for Windows and macOS. Plain text in, plain text out. No vault, no database, no account, no sync.",
+    language: "Tauri",
+  },
+  {
     url: "https://github.com/shiphrahx/git-tomato",
     category: "starred",
     description:
