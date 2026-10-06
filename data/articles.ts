@@ -5,6 +5,7 @@ export type Article = {
 };
 
 const articles: Article[] = [
+  { title: "My favourite leadership books were written by a SEAL, a runner and a bodybuilder", url: "https://medium.com/@shiphrah_/my-favourite-leadership-books-were-written-by-a-seal-a-runner-and-a-bodybuilder-b2e0fd5bb880", date: "2026-09-01" },
   { title: "Why Adding More Engineers Makes Projects Later", url: "https://medium.com/@shiphrah_/why-adding-more-engineers-makes-projects-later-f270ad406f02", date: "2026-08-18" },
   { title: "The Art of Leaving Things Unfinished", url: "https://medium.com/@shiphrah_/the-art-of-leaving-things-unfinished-abfb09edb0b7", date: "2026-08-18" },
   { title: "You Closed 50 Tickets This Sprint, Yet You Learnt Nothing", url: "https://medium.com/@shiphrah_/you-closed-50-tickets-this-sprint-yet-you-learnt-nothing-590bf71d5515", date: "2026-06-26" },
