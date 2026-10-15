@@ -31,6 +31,9 @@ const books: Book[] = [
   { title: "Measure What Matters", author: "John Doerr", category: "Leadership & Teams" },
   { title: "The No Asshole Rule", author: "Robert I. Sutton", category: "Leadership & Teams" },
   { title: "The Coaching Habit", author: "Michael Bungay Stanier", category: "Leadership & Teams" },
+  { title: "Next Gen CEO", author: "Mike Soutar", category: "Leadership & Teams" },
+  { title: "The Dichotomy of Leadership", author: "Jocko Willink, Leif Babin", category: "Leadership & Teams" },
+  { title: "Leadership Strategy and Tactics", author: "Jocko Willink", category: "Leadership & Teams" },
 
   // — Business & Startups —
   { title: "The Lean Startup", author: "Eric Ries", category: "Business & Startups" },
