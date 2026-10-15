@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "Cássia Almeida",
     description: DESCRIPTION,
     url: SITE_URL,
-    images: [{ url: "/logos/avatar.jpg", width: 400, height: 400, alt: "Cássia Almeida" }],
+    images: [{ url: "/logos/avatar.jpg", width: 800, height: 800, alt: "Cássia Almeida" }],
   },
   twitter: {
     card: "summary",
