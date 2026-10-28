@@ -69,11 +69,26 @@ export default function About() {
                 hyperexponential · England, UK
               </div>
               <div className="timeline-desc">
-                Building AI-driven platforms that power smarter decision-making
-                for complex industries.
+                On a mission to build AI-driven platforms that power smarter,
+                faster decision-making for some of the world&apos;s most complex
+                industries.
                 <br />
-                Working on hx Renew, a flagship pricing decision intelligence
-                platform.
+                <br />
+                <ul className="timeline-products">
+                  <li>
+                    Align day to day engineering work with business goals and
+                    drive key technical decisions across the org
+                  </li>
+                  <li>
+                    Help engineering teams adopt agentic development workflows
+                    and guardrails, closing the gap between AI experimentation
+                    and reliable, production-grade use
+                  </li>
+                  <li>
+                    Build processes and workflows that improve delivery
+                    performance, engineering effectiveness, and team output
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
