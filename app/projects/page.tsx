@@ -9,40 +9,48 @@ export const metadata: Metadata = {
 };
 
 function ProjectRow({ p, showCaption }: { p: EnrichedProject; showCaption: boolean }) {
+  const main = (
+    <>
+      <div className="list-item-title">{p.name}</div>
+      {showCaption && p.caption && <div className="list-item-sub">{p.caption}</div>}
+    </>
+  );
   return (
     <div className="project-row">
-      <a
-        className="project-row-main"
-        href={p.siteUrl ?? p.url}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div className="list-item-title">{p.name}</div>
-        {showCaption && p.caption && <div className="list-item-sub">{p.caption}</div>}
-      </a>
+      {p.link ? (
+        <a className="project-row-main" href={p.link} target="_blank" rel="noopener noreferrer">
+          {main}
+        </a>
+      ) : (
+        <div className="project-row-main">{main}</div>
+      )}
       <div className="project-row-right">
         {p.language && <span className="project-tag">{p.language}</span>}
-        <a
-          className="project-repo"
-          href={p.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`${p.name} source on GitHub`}
-        >
-          <GitHubIcon />
-        </a>
+        {!p.private && (
+          <a
+            className="project-repo"
+            href={p.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${p.name} source on GitHub`}
+          >
+            <GitHubIcon />
+          </a>
+        )}
       </div>
     </div>
   );
 }
 
-type EnrichedProject = Omit<Project, "language"> & {
+type EnrichedProject = Omit<Project, "language" | "siteUrl"> & {
   name: string;
   year: number | null;
   language: string | null;
   createdAt: string | null;
   caption: string | null;
   siteUrl: string | null;
+  /** Where the project name links: the live site, else the repo unless it's private. */
+  link: string | null;
 };
 
 const byCreatedDesc = (a: EnrichedProject, b: EnrichedProject) =>
@@ -52,6 +60,7 @@ export default async function Projects() {
   const enriched: EnrichedProject[] = await Promise.all(
     projects.map(async (project) => {
       const meta = await getRepoMeta(project.url);
+      const siteUrl = project.siteUrl ?? meta.siteUrl;
       return {
         ...project,
         name: meta.name,
@@ -59,7 +68,8 @@ export default async function Projects() {
         language: project.language ?? (meta.language ? meta.language.toLowerCase() : null),
         createdAt: meta.createdAt,
         caption: project.description ?? meta.description,
-        siteUrl: meta.siteUrl,
+        siteUrl,
+        link: siteUrl ?? (project.private ? null : project.url),
       };
     })
   );
@@ -82,26 +92,32 @@ export default async function Projects() {
           <div className="card-grid">
             {starred.map((p) => (
               <div key={p.url} className="card">
-                <a
-                  className="card-name card-link"
-                  href={p.siteUrl ?? p.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {p.name}
-                </a>
+                {p.link ? (
+                  <a
+                    className="card-name card-link"
+                    href={p.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {p.name}
+                  </a>
+                ) : (
+                  <span className="card-name">{p.name}</span>
+                )}
                 {p.caption && <div className="card-desc">{p.caption}</div>}
                 <div className="card-footer">
                   {p.language && <span className="card-tag">{p.language}</span>}
-                  <a
-                    className="card-repo"
-                    href={p.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${p.name} source on GitHub`}
-                  >
-                    <GitHubIcon />
-                  </a>
+                  {!p.private && (
+                    <a
+                      className="card-repo"
+                      href={p.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${p.name} source on GitHub`}
+                    >
+                      <GitHubIcon />
+                    </a>
+                  )}
                 </div>
               </div>
             ))}

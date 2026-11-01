@@ -5,6 +5,8 @@ export type Project = {
   category: ProjectCategory;
   description?: string; // optional caption; falls back to the repo's GitHub description
   language?: string; // optional override for the tech tag (used verbatim); else GitHub's language
+  private?: boolean; // private repo: hide the GitHub link so visitors don't hit a 404
+  siteUrl?: string; // optional live site override; needed for private repos the API can't see
 };
 
 // To add or remove a project, just add or delete a line below.
