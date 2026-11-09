@@ -13,6 +13,14 @@ export type Project = {
 // The creation year is extracted automatically from the GitHub repo.
 const projects: Project[] = [
   {
+    url: "https://github.com/shiphrahx/ascent",
+    category: "other",
+    siteUrl: "https://shiphrahx.github.io/ascent/",
+    description:
+      "Two AI coding agents, one brief: build a hot-air balloon flight over Cappadocia that runs in a browser and looks as close to Unreal Engine 5 as a laptop allows.",
+    language: "three.js",
+  },
+  {
     url: "https://github.com/shiphrahx/watermelon",
     category: "archived",
     description:
